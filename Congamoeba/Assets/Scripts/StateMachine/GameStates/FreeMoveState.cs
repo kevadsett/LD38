@@ -7,6 +7,13 @@ namespace Congamoeba.GameStateMachine
 	{
 		private PlayerMovementController _playerMovementController;
 
+		public Camera StateCamera { get; private set; }
+
+		public FreeMoveState(Camera stateCamera)
+		{
+			StateCamera = stateCamera;
+		}
+
 		public void OnEnter()
 		{
 			if (_playerMovementController == null)
@@ -15,7 +22,7 @@ namespace Congamoeba.GameStateMachine
 				_playerMovementController = player.GetComponent<PlayerMovementController> ();
 			}
 
-			_playerMovementController.EnableInput ();
+			_playerMovementController.Start ();
 		}
 
 		public void Update()
@@ -25,7 +32,7 @@ namespace Congamoeba.GameStateMachine
 
 		public void OnExit()
 		{
-			_playerMovementController.EnableInput ();
+			_playerMovementController.Stop();
 		}
 	}
 }

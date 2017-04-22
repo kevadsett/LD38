@@ -27,5 +27,11 @@ namespace Congamoeba.Player
 
 			transform.position = new Vector3(transform.position.x + _velocity.x, transform.position.y + _velocity.y);
 		}
+
+		public void Stop()
+		{
+			Acceleration = Vector2.zero;
+			_velocity = Vector2.zero;
+		}
 	}
 }

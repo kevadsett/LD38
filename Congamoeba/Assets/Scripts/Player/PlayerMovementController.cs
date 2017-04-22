@@ -10,14 +10,15 @@ namespace Congamoeba.Player
 		private bool _isEnabled;
 		private PlayerPhysics physics;
 
-		public void EnableInput()
+		public void Start()
 		{
 			_isEnabled = true;
 		}
 
-		public void DisableInput()
+		public void Stop()
 		{
 			_isEnabled = false;
+			physics.Stop ();
 		}
 
 		void Awake()

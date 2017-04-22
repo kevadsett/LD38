@@ -9,18 +9,19 @@ namespace Congamoeba.GameStateMachine
 		Conversation
 	};
 
-
 	public class GameStateMachine : MonoBehaviour {
+		public MixableCamera MixableCamera;
+
+		public Camera FreeMoveCamera;
+		public Camera ConversationCamera;
+
 		public IGameState CurrentState;
+
 		private eGameState _currentStateType;
 
 		private static GameStateMachine _instance;
 
-		private Dictionary<eGameState, IGameState> _states = new Dictionary<eGameState, IGameState>
-		{
-			{ eGameState.FreeMove, new FreeMoveState() },
-			{ eGameState.Conversation, new ConversationState() }
-		};
+		private Dictionary<eGameState, IGameState> _states;
 
 		public static void ChangeState(eGameState newState)
 		{
@@ -36,21 +37,42 @@ namespace Congamoeba.GameStateMachine
 			if (CurrentState != null)
 			{
 				CurrentState.OnExit ();
+				MixableCamera.FromCamera = CurrentState.StateCamera;
 			}
 			CurrentState = _states [newState];
 			_currentStateType = newState;
 			CurrentState.OnEnter ();
+
+			MixableCamera.ToCamera = CurrentState.StateCamera;
+
+			MixableCamera.Reset ();
 		}
 
 		void OnEnable()
 		{
 			_instance = this;
+			_states = new Dictionary<eGameState, IGameState>
+			{
+				{ eGameState.FreeMove, new FreeMoveState(FreeMoveCamera) },
+				{ eGameState.Conversation, new ConversationState(ConversationCamera) }
+			};
 			ChangeGameState (eGameState.FreeMove);
 		}
 
 		void Update()
 		{
 			CurrentState.Update ();
+			if (Input.GetKeyDown (KeyCode.Space))
+			{
+				if (_currentStateType == eGameState.Conversation)
+				{
+					ChangeGameState (eGameState.FreeMove);
+				}
+				else
+				{
+					ChangeGameState (eGameState.Conversation);
+				}
+			}
 		}
 
 		void OnDisable()
