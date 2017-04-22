@@ -9,17 +9,19 @@ namespace Congamoeba.GameStateMachine
 
 		public Camera StateCamera { get; private set; }
 
-		public FreeMoveState(Camera stateCamera)
+		private GameObject _player;
+
+		public FreeMoveState(Camera stateCamera, GameObject player)
 		{
 			StateCamera = stateCamera;
+			_player = player;
 		}
 
 		public void OnEnter()
 		{
 			if (_playerMovementController == null)
 			{
-				GameObject player = GameObject.Find ("Player");
-				_playerMovementController = player.GetComponent<PlayerMovementController> ();
+				_playerMovementController = _player.GetComponent<PlayerMovementController> ();
 			}
 
 			_playerMovementController.Start ();

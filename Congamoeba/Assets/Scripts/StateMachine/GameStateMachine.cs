@@ -15,6 +15,8 @@ namespace Congamoeba.GameStateMachine
 		public Camera FreeMoveCamera;
 		public Camera ConversationCamera;
 
+		public GameObject Player;
+
 		public IGameState CurrentState;
 
 		private eGameState _currentStateType;
@@ -53,8 +55,8 @@ namespace Congamoeba.GameStateMachine
 			_instance = this;
 			_states = new Dictionary<eGameState, IGameState>
 			{
-				{ eGameState.FreeMove, new FreeMoveState(FreeMoveCamera) },
-				{ eGameState.Conversation, new ConversationState(ConversationCamera) }
+				{ eGameState.FreeMove, new FreeMoveState(FreeMoveCamera, Player) },
+				{ eGameState.Conversation, new ConversationState(ConversationCamera, Player) }
 			};
 			ChangeGameState (eGameState.FreeMove);
 		}
