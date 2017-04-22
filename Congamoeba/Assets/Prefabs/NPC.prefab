@@ -23,6 +23,7 @@ GameObject:
   - 23: {fileID: 23000011038853746}
   - 58: {fileID: 58000011750398436}
   - 114: {fileID: 114000010062131142}
+  - 114: {fileID: 114000014249164550}
   m_Layer: 9
   m_Name: NPC
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: e0a027092a458464781179e801e38661, type: 2}
-  m_SubsetIndices:
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -102,8 +103,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd31d4ee18a94ce39cf6db125e1b5ef, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   ConversationPosition: {x: 1.75, y: 0.8}
   Transition:
     serializedVersion: 2
@@ -122,3 +123,14 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   MixSpeed: 2
+--- !u!114 &114000014249164550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011932277524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45155d4cd5c594b538835b9462d2cf04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
