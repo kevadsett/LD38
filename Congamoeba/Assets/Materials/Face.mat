@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Amoeba1
-  m_Shader: {fileID: 4800000, guid: 8f9d6f18e895641df9ff0a1b9cee3e87, type: 3}
+  m_Name: Face
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ec295bc896def45ea8413c24b1a1fb93, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -71,9 +71,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-        name: _Amount
-      second: 0.054
-    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -85,21 +82,6 @@ Material:
     - first:
         name: _DstBlend
       second: 0
-    - first:
-        name: _Freq
-      second: 1
-    - first:
-        name: _Freq0
-      second: 5
-    - first:
-        name: _Freq1
-      second: 3
-    - first:
-        name: _Freq2
-      second: 2
-    - first:
-        name: _Freq3
-      second: -1
     - first:
         name: _GlossMapScale
       second: 1
@@ -128,12 +110,6 @@ Material:
         name: _SpecularHighlights
       second: 1
     - first:
-        name: _Speed0
-      second: 0.5
-    - first:
-        name: _Speed1
-      second: -0.5
-    - first:
         name: _SrcBlend
       second: 1
     - first:
@@ -145,13 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 1, b: 0.91724133, a: 1}
-    - first:
-        name: _Colour
-      second: {r: 0, g: 1, b: 0.83448267, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _Fade
-      second: {r: 0, g: 0.74264705, b: 0.6814879, a: 0.291}
