@@ -36,31 +36,26 @@ namespace Congamoeba.Player
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx0");
 				Play ();
-				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx1"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx1");
 				Play ();
-				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx2"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx2");
 				Play ();
-				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx3"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx3");
 				Play ();
-				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx4"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx4");
 				Play ();
-				_face.SayWord ();
 			}
 		}
 
@@ -91,7 +86,6 @@ namespace Congamoeba.Player
 		{
 			_audioSource.clip = ConversationService.GetPlayerClip ("Success");
 			Play ();
-			_face.SayWord ();
 			_shouldPlaySuccessNoise = false;
 		}
 
@@ -99,6 +93,7 @@ namespace Congamoeba.Player
 		{
 			_audioSource.pitch = (Random.value * 0.05f) + 1.025f;
 			_audioSource.Play ();
+			_face.SayWord ();
 		}
 	}
 }

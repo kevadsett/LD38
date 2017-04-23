@@ -177,6 +177,7 @@ namespace Congamoeba.NPC
 					if (_sentenceIndex >= _conversation.NpcSentences.Count)
 					{
 						_reaction = eReactionType.yay;
+						ConversationService.IncreaseDifficulty ();
 					}
 					else
 					{
@@ -185,7 +186,6 @@ namespace Congamoeba.NPC
 						_stringPosition = 0;
 						_syllableIndex = 0;
 					}
-					ConversationService.IncreaseDifficulty ();
 				}
 			}
 			else
