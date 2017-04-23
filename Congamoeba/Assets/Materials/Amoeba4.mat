@@ -154,4 +154,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Fade
-      second: {r: 0.33823532, g: 0.4523327, b: 1, a: 0.291}
+      second: {r: 0.36548445, g: 0.3939863, b: 0.9558824, a: 0.291}
