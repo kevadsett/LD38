@@ -53,7 +53,6 @@ namespace Congamoeba.NPC
 			List<AudioClip> naySounds,
 			PlayerSounds playerSounds
 		) {
-			_conversation = ConversationService.GetConversation (npcStateMachine.Difficulty);
 			_currentState = eConversationState.talking;
 			_audioSource = npcStateMachine.gameObject.GetComponent<AudioSource> ();
 			_stateMachine = npcStateMachine;
@@ -64,6 +63,7 @@ namespace Congamoeba.NPC
 
 		public void OnEnter()
 		{
+			_conversation = ConversationService.GetConversation ();
 			_stringPosition = 0;
 			_reaction = eReactionType.moreInfoNeeded;
 			_currentState = eConversationState.talking;
@@ -77,6 +77,10 @@ namespace Congamoeba.NPC
 			{
 			case eConversationState.talking:
 				_playerSounds.Disable ();
+				if (Time.time - _timeReactingStarted < ConversationService.REACTION_SPEED)
+				{
+					return;
+				}
 				Speak ();
 				break;
 			case eConversationState.listening:
@@ -123,7 +127,7 @@ namespace Congamoeba.NPC
 				return;
 			}
 
-			SentenceData sentence = _conversation.Sentences [_sentenceIndex];
+			SentenceData sentence = _conversation.NpcSentences [_sentenceIndex];
 			SyllableData syllable = sentence.Syllables [_syllableIndex];
 
 			_audioSource.clip = syllable.NpcAudioClip;
@@ -146,14 +150,26 @@ namespace Congamoeba.NPC
 				return;
 			}
 
-			SentenceData sentence = _conversation.Sentences [_sentenceIndex];
+			SentenceData sentence = _conversation.PlayerSentences [_sentenceIndex];
 
 			if (Input.GetButtonDown (sentence.Syllables [_stringPosition].Input))
 			{
 				_stringPosition++;
 				if (_stringPosition == sentence.Syllables.Count)
 				{
-					_reaction = eReactionType.yay;
+					_sentenceIndex++;
+					if (_sentenceIndex >= _conversation.NpcSentences.Count)
+					{
+						_reaction = eReactionType.yay;
+					}
+					else
+					{
+						_currentState = eConversationState.talking;
+						_timeReactingStarted = Time.time;
+						_stringPosition = 0;
+						_syllableIndex = 0;
+					}
+					ConversationService.IncreaseDifficulty ();
 				}
 			}
 			else

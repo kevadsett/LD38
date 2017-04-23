@@ -13,6 +13,8 @@ namespace Congamoeba.Conversations
 		private static Dictionary<string, AudioClip> _playerClips = new Dictionary<string, AudioClip>();
 		private static Dictionary<string, AudioClip> _npcClips = new Dictionary<string, AudioClip>();
 
+		private static int _difficulty;
+
 		public static void Initialise()
 		{
 			_conversations = new Dictionary<string, ConversationData>();
@@ -34,7 +36,21 @@ namespace Congamoeba.Conversations
 					);
 				}
 
-				foreach (SentenceData sentence in conversation.Sentences)
+				foreach (SentenceData sentence in conversation.PlayerSentences)
+				{
+					foreach (SyllableData syllable in sentence.Syllables)
+					{
+						if (_playerClips.ContainsKey (syllable.Input) == false)
+						{
+							_playerClips.Add (syllable.Input, syllable.PlayerAudioClip);
+						}
+						if (_npcClips.ContainsKey (syllable.Input) == false)
+						{
+							_npcClips.Add (syllable.Input, syllable.NpcAudioClip);
+						}
+					}
+				}
+				foreach (SentenceData sentence in conversation.NpcSentences)
 				{
 					foreach (SyllableData syllable in sentence.Syllables)
 					{
@@ -51,16 +67,17 @@ namespace Congamoeba.Conversations
 			}
 		}
 
-		public static ConversationData GetConversation(int difficulty)
+		public static ConversationData GetConversation()
 		{
 			List<ConversationData> conversationList;
-			if (_conversationsByDifficulty.TryGetValue (difficulty, out conversationList))
+			if (_conversationsByDifficulty.TryGetValue (_difficulty, out conversationList))
 			{
 				return conversationList [Random.Range (0, conversationList.Count - 1)];
 			}
-			else if (difficulty >= 0)
+			else if (_difficulty >= 0)
 			{
-				return GetConversation (difficulty - 1);
+				_difficulty--;
+				return GetConversation ();
 			}
 			else
 			{
@@ -78,6 +95,10 @@ namespace Congamoeba.Conversations
 			return _npcClips [input];
 		}
 
+		public static void IncreaseDifficulty()
+		{
+			_difficulty++;
+		}
 //		public static string GetSentenceString(SentenceData sentence)
 //		{
 //			string sentenceString = "";
