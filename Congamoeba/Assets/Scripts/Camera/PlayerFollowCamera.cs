@@ -4,10 +4,17 @@ public class PlayerFollowCamera : MonoBehaviour
 {
 	public GameObject PlayerObject;
 
+	[RangeAttribute (0f, 1f)]
+	public float QueueWeighting;
+
 	private Vector3 _currentVelocity;
 
 	void LateUpdate ()
 	{
-		transform.position = new Vector3 (PlayerObject.transform.position.x, PlayerObject.transform.position.y, transform.position.z);
+		Vector3 playerPos = PlayerObject.transform.position;
+		Vector3 queuePos = OrderlyQueueficator.GetAveragePosition ();
+		Vector3 camPos = Vector3.Lerp (playerPos, queuePos, QueueWeighting);
+
+		transform.position = new Vector3 (camPos.x, camPos.y, transform.position.z);
 	}
 }

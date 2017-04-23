@@ -22,6 +22,17 @@ public static class OrderlyQueueficator {
 		return theQueue[n];
 	}
 
+	public static Vector3 GetAveragePosition () {
+		Vector3 pos = Vector3.zero;
+
+		int count = theQueue.Count;
+		for (int i = 0; i < count; i++) {
+			pos += theQueue[i].position;
+		}
+
+		return pos * 1f / count;
+	}
+
 	static int GetMyIndex (Transform me) {
 		return theQueue.FindIndex (b => (b == me));
 	}
