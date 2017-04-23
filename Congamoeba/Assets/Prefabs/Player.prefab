@@ -39,6 +39,7 @@ GameObject:
   - 4: {fileID: 4000013209673982}
   - 33: {fileID: 33000011545935812}
   - 23: {fileID: 23000010584292922}
+  - 114: {fileID: 114000012415031522}
   m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
@@ -481,6 +482,22 @@ MonoBehaviour:
   Damping: 0.02
   MaxVelocity: 2
   AmoebaGraphics: {fileID: 114000010474683784}
+--- !u!114 &114000012415031522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011578060114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2fd367c8b8043178efafd497dafc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matSelection: {fileID: 11400000, guid: 26cd1f9046fdb469b95570e04befac06, type: 2}
+  blinkSelection: {fileID: 11400000, guid: 001d34644372447708020d0255f70f2b, type: 2}
+  minBlink: 2
+  maxBlink: 3
+  blinkDuration: 0.2
 --- !u!114 &114000012657540220
 MonoBehaviour:
   m_ObjectHideFlags: 1

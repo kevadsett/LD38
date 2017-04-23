@@ -17,11 +17,13 @@ public class AmoebaMesh : MonoBehaviour {
 
 		var tris = new int[numverts * 3];
 
+		float offset = Random.Range (0f, Mathf.PI * 2f);
+
 		// generate circle of verts
 		float step = -(1f / numverts) * Mathf.PI * 2f;
 		for (int i = 1; i <= numverts; i++) {
 			float angle = i * step;
-			float x = Mathf.Cos (angle), y = Mathf.Sin (angle);
+			float x = Mathf.Cos (angle + offset), y = Mathf.Sin (angle + offset);
 			verts[i] = new Vector3 (x, y, 0f);
 			uvs[i] = new Vector2 (1f, -angle);
 		}

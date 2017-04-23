@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012793906128}
   - 33: {fileID: 33000010773495288}
   - 23: {fileID: 23000014044377706}
+  - 114: {fileID: 114000012169500098}
   m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
@@ -355,6 +356,22 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   MixSpeed: 2
+--- !u!114 &114000012169500098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010019519568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2fd367c8b8043178efafd497dafc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matSelection: {fileID: 11400000, guid: 26cd1f9046fdb469b95570e04befac06, type: 2}
+  blinkSelection: {fileID: 11400000, guid: 001d34644372447708020d0255f70f2b, type: 2}
+  minBlink: 2
+  maxBlink: 3
+  blinkDuration: 0.2
 --- !u!114 &114000013621436936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,4 +435,5 @@ MonoBehaviour:
   - {fileID: 0}
   NaySounds:
   - {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
+  CurrentStateType: 0
   Difficulty: 0

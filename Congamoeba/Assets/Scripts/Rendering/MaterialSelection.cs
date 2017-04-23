@@ -8,4 +8,8 @@ public class MaterialSelection : ScriptableObject {
 	public Material GetRandom () {
 		return mats[Random.Range (0, mats.Length)];
 	}
+
+	public Material GetIndex (int i) {
+		return mats[i];
+	}
 }
