@@ -105,8 +105,9 @@ namespace Congamoeba.NPC
 				switch (_reaction)
 				{
 				case eReactionType.yay:
-					_audioSource.clip = ConversationService.GetNpcClip(_yaySound.name, _stateMachine.VoiceSettings);
+					_audioSource.clip = ConversationService.GetNpcClip (_yaySound.name, _stateMachine.VoiceSettings);
 					_stateMachine.ChangeState (eNpcState.Following);
+					_playerSounds.PlaySuccess ();
 					break;
 				case eReactionType.nay:
 					_audioSource.clip = ConversationService.GetNpcClip(_naySound.name, _stateMachine.VoiceSettings);

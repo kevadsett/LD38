@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Congamoeba.Conversations;
 
 namespace Congamoeba.Player
@@ -12,6 +11,10 @@ namespace Congamoeba.Player
 		private AudioSource _audioSource;
 		private CuteWeeFace _face;
 
+		private bool _shouldPlaySuccessNoise;
+		private float _successNoiseDelay;
+		private float _timeSuccessNoiseQueued;
+
 		void Awake ()
 		{
 			_audioSource = GetComponent<AudioSource> ();
@@ -20,34 +23,43 @@ namespace Congamoeba.Player
 
 		void Update()
 		{
+			if (_shouldPlaySuccessNoise)
+			{
+				if (Time.time - _timeSuccessNoiseQueued >= _successNoiseDelay)
+				{
+					ActuallyPlaySuccess ();
+				}
+				return;
+			}
+
 			if (Input.GetButtonDown ("Sfx0"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx0");
-				_audioSource.Play ();
+				Play ();
 				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx1"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx1");
-				_audioSource.Play ();
+				Play ();
 				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx2"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx2");
-				_audioSource.Play ();
+				Play ();
 				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx3"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx3");
-				_audioSource.Play ();
+				Play ();
 				_face.SayWord ();
 			}
 			if (Input.GetButtonDown ("Sfx4"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx4");
-				_audioSource.Play ();
+				Play ();
 				_face.SayWord ();
 			}
 		}
@@ -66,6 +78,27 @@ namespace Congamoeba.Player
 			{
 				enabled = false;
 			}
+		}
+
+		public void PlaySuccess()
+		{
+			_shouldPlaySuccessNoise = true;
+			_timeSuccessNoiseQueued = Time.time;
+			_successNoiseDelay = Random.value  * 0.2f + 0.1f;
+		}
+
+		private void ActuallyPlaySuccess()
+		{
+			_audioSource.clip = ConversationService.GetPlayerClip ("Success");
+			Play ();
+			_face.SayWord ();
+			_shouldPlaySuccessNoise = false;
+		}
+
+		private void Play()
+		{
+			_audioSource.pitch = (Random.value * 0.05f) + 1.025f;
+			_audioSource.Play ();
 		}
 	}
 }
