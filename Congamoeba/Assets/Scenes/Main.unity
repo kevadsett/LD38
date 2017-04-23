@@ -289,6 +289,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20000013307284686, guid: e0124878dffec44d08e3865e6913333b,
+        type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0124878dffec44d08e3865e6913333b, type: 2}
   m_IsPrefabParent: 0
@@ -386,22 +391,22 @@ Prefab:
     - target: {fileID: 114000012177718896, guid: 4e4ef757f63fb48eb8a0222c1a584424,
         type: 2}
       propertyPath: MixableCamera
-      value:
+      value: 
       objectReference: {fileID: 2122507710}
     - target: {fileID: 114000012177718896, guid: 4e4ef757f63fb48eb8a0222c1a584424,
         type: 2}
       propertyPath: FreeMoveCamera
-      value:
+      value: 
       objectReference: {fileID: 1988396118}
     - target: {fileID: 114000012177718896, guid: 4e4ef757f63fb48eb8a0222c1a584424,
         type: 2}
       propertyPath: ConversationCamera
-      value:
+      value: 
       objectReference: {fileID: 289259552}
     - target: {fileID: 114000012177718896, guid: 4e4ef757f63fb48eb8a0222c1a584424,
         type: 2}
       propertyPath: Player
-      value:
+      value: 
       objectReference: {fileID: 1877764997}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e4ef757f63fb48eb8a0222c1a584424, type: 2}

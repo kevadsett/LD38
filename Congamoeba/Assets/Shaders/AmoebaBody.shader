@@ -1,4 +1,6 @@
-﻿Shader "Unlit/AmoebaBody"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Unlit/AmoebaBody"
 {
 	Properties
 	{
@@ -12,7 +14,7 @@
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" "DisableBatching"="True" }
 		LOD 100
 
 		Pass
@@ -49,8 +51,10 @@
 				float time = _Time.y;
 
 				float3 wsv = v.vertex;
-				wsv += v.vertex * sin(angle * _Freq0 + time * _Speed0) * _Amount;
-				wsv += v.vertex * sin(angle * _Freq1 + time * _Speed1) * _Amount;
+				float3 osv = wsv;
+
+				wsv += osv * sin(angle * _Freq0 + time * _Speed0) * _Amount;
+				wsv += osv * sin(angle * _Freq1 + time * _Speed1) * _Amount;
 
 				v2f o;
 				o.vertex = UnityObjectToClipPos(wsv);
