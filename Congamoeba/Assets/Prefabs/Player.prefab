@@ -219,7 +219,7 @@ Camera:
   far clip plane: 1000
   field of view: 27.6
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 1.5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -398,7 +398,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd31d4ee18a94ce39cf6db125e1b5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConversationPosition: {x: -1.75, y: -0.8}
+  ConversationPosition: {x: -0.75, y: -0.4}
   Transition:
     serializedVersion: 2
     m_Curve:
