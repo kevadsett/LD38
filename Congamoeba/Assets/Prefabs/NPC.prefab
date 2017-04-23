@@ -367,10 +367,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Acceleration: {x: 0, y: 0, z: 0}
-  AccelRate: 22
+  AccelRate: 20
   Damping: 0.02
-  MaxVelocity: 2.1
-  AmoebaGraphics: {fileID: 0}
+  MaxVelocity: 2
+  AmoebaGraphics: {fileID: 114000013713174196}
 --- !u!114 &114000013713174196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,9 +385,9 @@ MonoBehaviour:
   face: {fileID: 4000012793906128}
   stretcher: {fileID: 4000013545164742}
   stretchee: {fileID: 4000012910774164}
-  effectScale: 1
-  scaleMin: 0.95
-  scaleMax: 1.05
+  effectScale: 0.3
+  scaleMin: 0.9
+  scaleMax: 1.1
   doDebugStuff: 0
   materialSubject: {fileID: 23000010444211452}
   matSelection: {fileID: 11400000, guid: cecca3bbb2e9f481187e37fea154e1df, type: 2}
@@ -420,3 +420,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 07a3dc9b7f5a34fe287a48fd44685209, type: 3}
   - {fileID: 8300000, guid: 5b6eb0b28f3c8401ea00f41e4c4eb6e5, type: 3}
   - {fileID: 8300000, guid: 11cb8b6bbee404d3ea6b5fdcf087e9fc, type: 3}
+  Difficulty: 0

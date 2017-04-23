@@ -129,10 +129,10 @@ Material:
       second: 1
     - first:
         name: _Speed0
-      second: 0.5
+      second: 1
     - first:
         name: _Speed1
-      second: -0.5
+      second: -1
     - first:
         name: _SrcBlend
       second: 1
@@ -148,10 +148,10 @@ Material:
       second: {r: 0, g: 1, b: 0.91724133, a: 1}
     - first:
         name: _Colour
-      second: {r: 1, g: 0.56064904, b: 0.16176468, a: 1}
+      second: {r: 1, g: 0.5837728, b: 0.20588237, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Fade
-      second: {r: 1, g: 0.43752533, b: 0.13235295, a: 0.291}
+      second: {r: 1, g: 0.39310342, b: 0, a: 0.291}
