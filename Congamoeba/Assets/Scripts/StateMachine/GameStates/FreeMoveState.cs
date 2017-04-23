@@ -11,6 +11,8 @@ namespace Congamoeba.GameStateMachine
 
 		private GameObject _player;
 
+		private PlayerSounds _playerSounds;
+
 		public FreeMoveState(Camera stateCamera, GameObject player)
 		{
 			StateCamera = stateCamera;
@@ -25,6 +27,13 @@ namespace Congamoeba.GameStateMachine
 			}
 
 			_playerMovementController.Start ();
+
+			if (_playerSounds == null)
+			{
+				_playerSounds = _player.GetComponent<PlayerSounds> ();
+			}
+
+			_playerSounds.Enable ();
 		}
 
 		public void Update()

@@ -21,6 +21,6 @@ namespace Congamoeba.Conversations
 	{
 		public AudioClip PlayerAudioClip;
 		public AudioClip NpcAudioClip;
-		public char Character;
+		public string Input;
 	}
 }

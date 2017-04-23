@@ -5,9 +5,13 @@ namespace Congamoeba.Conversations
 {
 	public static class ConversationService
 	{
+		public const float REACTION_SPEED = 0.5f;
 		private static Dictionary<string, ConversationData> _conversations;
 
 		private static Dictionary<int, List<ConversationData>> _conversationsByDifficulty;
+
+		private static Dictionary<string, AudioClip> _playerClips = new Dictionary<string, AudioClip>();
+		private static Dictionary<string, AudioClip> _npcClips = new Dictionary<string, AudioClip>();
 
 		public static void Initialise()
 		{
@@ -29,6 +33,21 @@ namespace Congamoeba.Conversations
 						new List<ConversationData> () { conversation }
 					);
 				}
+
+				foreach (SentenceData sentence in conversation.Sentences)
+				{
+					foreach (SyllableData syllable in sentence.Syllables)
+					{
+						if (_playerClips.ContainsKey (syllable.Input) == false)
+						{
+							_playerClips.Add (syllable.Input, syllable.PlayerAudioClip);
+						}
+						if (_npcClips.ContainsKey (syllable.Input) == false)
+						{
+							_npcClips.Add (syllable.Input, syllable.NpcAudioClip);
+						}
+					}
+				}
 			}
 		}
 
@@ -49,14 +68,24 @@ namespace Congamoeba.Conversations
 			}
 		}
 
-		public static string GetSentenceString(SentenceData sentence)
+		public static AudioClip GetPlayerClip(string input)
 		{
-			string sentenceString = "";
-			foreach (SyllableData syllable in sentence.Syllables)
-			{
-				sentenceString += syllable.Character;
-			}
-			return sentenceString.ToLower();
+			return _playerClips [input];
 		}
+
+		public static AudioClip GetNpcClip(string input)
+		{
+			return _npcClips [input];
+		}
+
+//		public static string GetSentenceString(SentenceData sentence)
+//		{
+//			string sentenceString = "";
+//			foreach (SyllableData syllable in sentence.Syllables)
+//			{
+//				sentenceString += syllable.Character;
+//			}
+//			return sentenceString.ToLower();
+//		}
 	}
 }
