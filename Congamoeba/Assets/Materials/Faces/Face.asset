@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mats:
   - {fileID: 2100000, guid: 37bcb7f53976c4bd292956c18cb76da1, type: 2}
+  - {fileID: 2100000, guid: abcc1a637c63449f0ba61bf66a96bc6a, type: 2}

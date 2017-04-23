@@ -9,8 +9,8 @@ namespace Congamoeba.NPC {
 		public Camera StateCamera { get { return null; } }
 
 		Transform self;
-		Transform player;
 		PlayerPhysics physics;
+		CuteWeeFace face;
 
 		const float outerDist = 1.6f;
 		const float innerDist = 1.3f;
@@ -18,16 +18,17 @@ namespace Congamoeba.NPC {
 		public FollowState (GameObject npc) {
 			self = npc.transform;
 			physics = npc.GetComponent<PlayerPhysics> ();
-
-			player = PlayerMovementController.PlayerTransform;
+			face = npc.GetComponentInChildren<CuteWeeFace> ();
 		}
 
 		public void OnEnter() {
 			OrderlyQueueficator.AddMe (self);
+			face.MakeHappy ();
 		}
 
 		public void Update () {
 			Transform target = OrderlyQueueficator.GetMyTarget (self);
+			Transform player = PlayerMovementController.PlayerTransform;
 
 			Vector3 playerBetween = player.position - self.position;
 			Vector3 accel = new Vector3 (0f, 0f, 0f);
@@ -56,6 +57,7 @@ namespace Congamoeba.NPC {
 		public void OnExit () {
 			OrderlyQueueficator.RemoveMe (self);
 			physics.Stop ();
+			face.MakeSad ();
 		}
 	}
 }
