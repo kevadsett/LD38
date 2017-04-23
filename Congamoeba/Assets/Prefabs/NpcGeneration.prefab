@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8f6ada725b034ae9ac0739b875238d7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   NpcPrefab: {fileID: 1000011932277524, guid: 6b8b920853ef34e2c89dc2b5012c895e, type: 2}
   GenerationBands: 030000000500000007000000
-  DistanceBetweenBands: 25
-  Randomisation: 5
+  DistanceBetweenBands: 5
+  Randomisation: 2

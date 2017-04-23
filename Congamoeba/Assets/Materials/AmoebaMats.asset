@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4afe905914f14067a3520171bc1cc34, type: 3}
+  m_Name: AmoebaMats
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 0cc3728cb99ff48b3b1a80687273919b, type: 2}
+  - {fileID: 2100000, guid: 53e9ba7eb218d4fc596bfffc31d26345, type: 2}
+  - {fileID: 2100000, guid: 0453b4749607b47d29fbc38b38c30f70, type: 2}
+  - {fileID: 2100000, guid: e22db54faf2ea475199678fa80aac127, type: 2}
+  - {fileID: 2100000, guid: d9eb60f97e60a4324844c4ee5b2709b1, type: 2}
+  - {fileID: 2100000, guid: 95634a101551e4bba92864af4959aa98, type: 2}
