@@ -5,6 +5,8 @@ namespace Congamoeba.Player
 	[RequireComponent(typeof(PlayerPhysics))]
 	public class PlayerMovementController : MonoBehaviour
 	{
+		public static Transform PlayerTransform;
+
 		public float Speed;
 
 		private bool _isEnabled;
@@ -24,6 +26,7 @@ namespace Congamoeba.Player
 		void Awake()
 		{
 			physics = GetComponent<PlayerPhysics> ();
+			PlayerTransform = transform;
 		}
 
 		void Update ()
