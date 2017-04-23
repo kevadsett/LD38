@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ImageEnabledAxis : MonoBehaviour {
 	[SerializeField] string axis;
 	[SerializeField] float duration;
+	[SerializeField] bool reverse;
 	[SerializeField] bool invert;
 
 	MaskableGraphic graphic;
 	Color color;
-	float time;
 
 	void Awake () {
 		graphic = GetComponent<MaskableGraphic> ();
@@ -18,17 +18,19 @@ public class ImageEnabledAxis : MonoBehaviour {
 	}
 
 	void Update () {
-		time -= Time.deltaTime / duration;
+		float amt = Input.GetAxis (axis);
 
-		if (Input.GetAxis (axis) > 0f && !invert) {
-			time = 1f;
+		if (reverse) {
+			amt = Mathf.Clamp01 (0f - amt);
+		} else {
+			amt = Mathf.Clamp01 (amt);
 		}
 
-		if (Input.GetAxis (axis) < 0f && invert) {
-			time = 1f;
+		if (invert) {
+			color.a = 1f - amt;
+		} else {
+			color.a = amt;
 		}
-
-		color.a = Mathf.Clamp01 (time);
 		graphic.color = color;
 	}
 }
