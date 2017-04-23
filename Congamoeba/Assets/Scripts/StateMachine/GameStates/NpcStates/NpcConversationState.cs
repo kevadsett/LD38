@@ -145,11 +145,6 @@ namespace Congamoeba.NPC
 
 		private void JudgeKeys()
 		{
-			if (Input.anyKeyDown == false)
-			{
-				return;
-			}
-
 			SentenceData sentence = _conversation.PlayerSentences [_sentenceIndex];
 
 			if (Input.GetButtonDown (sentence.Syllables [_stringPosition].Input))
