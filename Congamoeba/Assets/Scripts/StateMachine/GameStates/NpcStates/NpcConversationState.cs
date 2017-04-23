@@ -73,6 +73,8 @@ namespace Congamoeba.NPC
 			_currentState = eConversationState.talking;
 			_sentenceIndex = 0;
 			_syllableIndex = 0;
+
+			AudioPlayer.PlaySound ("bassnote0");
 		}
 
 		public void Update()
@@ -177,6 +179,8 @@ namespace Congamoeba.NPC
 					if (_sentenceIndex >= _conversation.NpcSentences.Count)
 					{
 						_reaction = eReactionType.yay;
+
+						AudioPlayer.PlaySound ("treblenote0");
 					}
 					else
 					{
@@ -184,6 +188,8 @@ namespace Congamoeba.NPC
 						_timeReactingStarted = Time.time;
 						_stringPosition = 0;
 						_syllableIndex = 0;
+
+						AudioPlayer.PlaySound ("bassnote" + _sentenceIndex);
 					}
 					ConversationService.IncreaseDifficulty ();
 				}
