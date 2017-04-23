@@ -33,7 +33,7 @@ namespace Congamoeba.NPC
 				{ eNpcState.Conversation, new NpcConversationState (this, YaySounds, NaySounds, playerSounds) },
 				{ eNpcState.Following, new FollowState (gameObject) },
 			};
-			ChangeState (eNpcState.Following);
+			ChangeState (eNpcState.Idling);
 		}
 
 		public void ChangeState(eNpcState newState)

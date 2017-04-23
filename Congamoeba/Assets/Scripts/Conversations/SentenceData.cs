@@ -4,9 +4,8 @@ using System.Collections.Generic;
 namespace Congamoeba.Conversations
 {
 	[CreateAssetMenu]
-	public class ConversationData : ScriptableObject
+	public class SentenceData : ScriptableObject
 	{
-		public List<SentenceData> Sentences;
-		public int Difficulty;
+		public List<SyllableData> Syllables;
 	}
 }
