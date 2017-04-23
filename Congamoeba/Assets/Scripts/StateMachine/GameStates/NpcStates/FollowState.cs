@@ -2,43 +2,60 @@
 using System.Collections;
 using Congamoeba.GameStateMachine;
 using Congamoeba.Player;
+using System.Collections.Generic;
 
 namespace Congamoeba.NPC {
 	public class FollowState : IGameState {
 		public Camera StateCamera { get { return null; } }
 
 		Transform self;
-		Transform target;
+		Transform player;
 		PlayerPhysics physics;
 
-		const float outerDist = 2f;
-		const float innerDist = 1.5f;
+		const float outerDist = 1.6f;
+		const float innerDist = 1.3f;
 
 		public FollowState (GameObject npc) {
 			self = npc.transform;
-			target = Congamoeba.Player.PlayerMovementController.PlayerTransform;
 			physics = npc.GetComponent<PlayerPhysics> ();
+
+			player = PlayerMovementController.PlayerTransform;
 		}
 
 		public void OnEnter() {
-			
+			OrderlyQueueficator.AddMe (self);
 		}
 
 		public void Update () {
-			Vector3 targetPos = target.position;
-			Vector3 between = targetPos - self.position;
+			Transform target = OrderlyQueueficator.GetMyTarget (self);
 
-			if (between.magnitude > outerDist)
+			Vector3 playerBetween = player.position - self.position;
+			Vector3 accel = new Vector3 (0f, 0f, 0f);
+
+			// prioritise avoiding the player, then following, then backing away
+			if (playerBetween.magnitude < innerDist)
 			{
-				physics.Acceleration = new Vector2 (between.x, between.y).normalized;
+				accel = new Vector3 (playerBetween.x, playerBetween.y).normalized * -1f;
 			}
-			else if (between.magnitude < innerDist)
-			{
-				//physics.Acceleration = new Vector2 (between.x, between.y).normalized;
+			else if (target != null) {
+				Vector3 between = target.position - self.position;
+
+				if (between.magnitude > outerDist)
+				{
+					accel = new Vector3 (between.x, between.y).normalized;
+				}
+				else if (between.magnitude < innerDist)
+				{
+					accel = new Vector3 (between.x, between.y).normalized * -1f;
+				}
 			}
+
+			physics.Acceleration = accel;
 		}
 
 		public void OnExit () {
+			OrderlyQueueficator.RemoveMe (self);
+			physics.Stop ();
 		}
 	}
 }

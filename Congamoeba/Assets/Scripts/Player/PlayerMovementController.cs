@@ -27,6 +27,8 @@ namespace Congamoeba.Player
 		{
 			physics = GetComponent<PlayerPhysics> ();
 			PlayerTransform = transform;
+
+			OrderlyQueueficator.AddMe(transform);
 		}
 
 		void Update ()

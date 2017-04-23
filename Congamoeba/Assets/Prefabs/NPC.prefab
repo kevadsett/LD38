@@ -366,10 +366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7462e58bc15429fa17017d780aa819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: {x: 0, y: 0}
-  AccelRate: 0
-  Damping: 0.12
-  MaxVelocity: 1
+  Acceleration: {x: 0, y: 0, z: 0}
+  AccelRate: 22
+  Damping: 0.02
+  MaxVelocity: 2.1
   AmoebaGraphics: {fileID: 0}
 --- !u!114 &114000013713174196
 MonoBehaviour:
