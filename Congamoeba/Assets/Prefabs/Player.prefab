@@ -209,7 +209,7 @@ Camera:
   m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.09375, g: 0.10689655, b: 0.125, a: 1}
+  m_BackGroundColor: {r: 0.1550173, g: 0.14230105, b: 0.20588237, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -499,6 +499,7 @@ MonoBehaviour:
   minBlink: 2
   maxBlink: 3
   blinkDuration: 0.2
+  speakDuration: 0.2
 --- !u!114 &114000012657540220
 MonoBehaviour:
   m_ObjectHideFlags: 1

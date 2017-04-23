@@ -10,9 +10,11 @@ public class CuteWeeFace : MonoBehaviour {
 	[SerializeField] float minBlink;
 	[SerializeField] float maxBlink;
 	[SerializeField] float blinkDuration;
+	[SerializeField] float speakDuration;
 
 	Renderer target;
 	float blinkTimer;
+	float speechTimer;
 	int matID;
 
 	public void MakeHappy () {
@@ -21,6 +23,10 @@ public class CuteWeeFace : MonoBehaviour {
 
 	public void MakeSad () {
 		matID = 0;
+	}
+
+	public void SayWord () {
+		speechTimer = speakDuration;
 	}
 
 	void Awake () {
@@ -34,12 +40,16 @@ public class CuteWeeFace : MonoBehaviour {
 			blinkTimer = Random.Range (minBlink, maxBlink);
 		}
 
-		blinkTimer -= Time.deltaTime;
+		int idToUse = (speechTimer > 0f) ? 2 : matID;
+
 
 		if (blinkTimer < blinkDuration) {
-			target.sharedMaterial = blinkSelection.GetIndex (matID);
+			target.sharedMaterial = blinkSelection.GetIndex (idToUse);
 		} else {
-			target.sharedMaterial = matSelection.GetIndex (matID);
+			target.sharedMaterial = matSelection.GetIndex (idToUse);
 		}
+
+		blinkTimer -= Time.deltaTime;
+		speechTimer -= Time.deltaTime;
 	}
 }

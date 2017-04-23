@@ -369,9 +369,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matSelection: {fileID: 11400000, guid: 26cd1f9046fdb469b95570e04befac06, type: 2}
   blinkSelection: {fileID: 11400000, guid: 001d34644372447708020d0255f70f2b, type: 2}
+  defaultFace: 0
   minBlink: 2
   maxBlink: 3
   blinkDuration: 0.2
+  speakDuration: 0.2
 --- !u!114 &114000013621436936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   YaySounds:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 76f0d36574ecc4817832a9dd757a3c3b, type: 3}
   NaySounds:
   - {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
   CurrentStateType: 0
