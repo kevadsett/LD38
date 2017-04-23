@@ -420,3 +420,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 07a3dc9b7f5a34fe287a48fd44685209, type: 3}
   - {fileID: 8300000, guid: 5b6eb0b28f3c8401ea00f41e4c4eb6e5, type: 3}
   - {fileID: 8300000, guid: 11cb8b6bbee404d3ea6b5fdcf087e9fc, type: 3}
+  PlayerSounds: {fileID: 114000010793090452, guid: 9a5e2c60c9df5494f92987566190ffbe,
+    type: 2}
+  Difficulty: 0

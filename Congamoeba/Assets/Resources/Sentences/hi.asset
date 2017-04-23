@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Congamoeba.Conversations:SentenceData
   Syllables:
   - {fileID: 11400000, guid: 7454689c795c1413381d073b3966c582, type: 2}
+  - {fileID: 11400000, guid: 27b655af5166341958e0b4d7fcb79c78, type: 2}

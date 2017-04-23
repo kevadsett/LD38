@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: oop
+  m_Name: ooh
   m_EditorClassIdentifier: Assembly-CSharp:Congamoeba.Conversations:SyllableData
-  PlayerAudioClip: {fileID: 0}
-  NpcAudioClip: {fileID: 0}
-  Character: 0
+  PlayerAudioClip: {fileID: 8300000, guid: 3b776d988f3284100b58fdf3f82817df, type: 3}
+  NpcAudioClip: {fileID: 8300000, guid: 3b776d988f3284100b58fdf3f82817df, type: 3}
+  Input: Sfx1

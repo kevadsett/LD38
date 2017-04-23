@@ -2,6 +2,7 @@
 using Congamoeba.GameStateMachine;
 using UnityEngine;
 using System.Collections.Generic;
+using Congamoeba.Player;
 
 namespace Congamoeba.NPC
 {
@@ -26,9 +27,10 @@ namespace Congamoeba.NPC
 
 		void Awake()
 		{
+			PlayerSounds playerSounds = GameObject.Find ("Player").GetComponent<PlayerSounds> ();
 			_states = new Dictionary<eNpcState, IGameState> {
 				{ eNpcState.Idling, new IdlingState (gameObject) },
-				{ eNpcState.Conversation, new NpcConversationState (this, YaySounds, NaySounds) },
+				{ eNpcState.Conversation, new NpcConversationState (this, YaySounds, NaySounds, playerSounds) },
 //				{ eNpcState.Following, new FollowingState() }
 			};
 			ChangeState (eNpcState.Idling);

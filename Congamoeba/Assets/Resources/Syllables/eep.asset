@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Congamoeba.Conversations:SyllableData
   PlayerAudioClip: {fileID: 8300000, guid: 5fa59b0e2854e42fca264be533f57d91, type: 3}
   NpcAudioClip: {fileID: 8300000, guid: c293b22af9bf843b1bbb3709f1d3facd, type: 3}
-  Character: 117
+  Input: Sfx0
