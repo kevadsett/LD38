@@ -24,6 +24,7 @@ GameObject:
   - 58: {fileID: 58000011750398436}
   - 114: {fileID: 114000010062131142}
   - 114: {fileID: 114000014249164550}
+  - 114: {fileID: 114000013621436936}
   m_Layer: 9
   m_Name: NPC
   m_TagString: Untagged
@@ -123,6 +124,20 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   MixSpeed: 2
+--- !u!114 &114000013621436936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011932277524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7462e58bc15429fa17017d780aa819, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Acceleration: {x: 0, y: 0}
+  Damping: 0.12
+  MaxVelocity: 1
 --- !u!114 &114000014249164550
 MonoBehaviour:
   m_ObjectHideFlags: 1
