@@ -17,6 +17,9 @@ namespace Congamoeba.Player
 			ConversationMover conversationMover = collision.gameObject.GetComponent<ConversationMover> ();
 			ConversationState.ConversationPartner = conversationMover;
 
+			NpcStateMachine npcStateMachine = collision.gameObject.GetComponent<NpcStateMachine> ();
+			npcStateMachine.ChangeState (eNpcState.Conversation);
+
 			GameStateMachine.GameStateMachine.ChangeState (eGameState.Conversation);
 		}
 	}

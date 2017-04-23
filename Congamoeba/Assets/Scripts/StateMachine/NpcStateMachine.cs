@@ -8,9 +8,7 @@ namespace Congamoeba.NPC
 	public enum eNpcState
 	{
 		Idling,
-		Talking,
-		Listening,
-		Reacting,
+		Conversation,
 		Following,
 		Merging
 	};
@@ -24,12 +22,14 @@ namespace Congamoeba.NPC
 		void Awake()
 		{
 			_states = new Dictionary<eNpcState, IGameState> {
-				{ eNpcState.Idling, new IdlingState (gameObject) }
+				{ eNpcState.Idling, new IdlingState (gameObject) },
+				{ eNpcState.Conversation, new NpcConversationState (this) },
+//				{ eNpcState.Following, new FollowingState() }
 			};
 			ChangeState (eNpcState.Idling);
 		}
 
-		void ChangeState(eNpcState newState)
+		public void ChangeState(eNpcState newState)
 		{
 			if (_currentState != null)
 			{

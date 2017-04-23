@@ -5,6 +5,7 @@ namespace Congamoeba.GameStateMachine
 {
 	public enum eGameState
 	{
+		Load,
 		FreeMove,
 		Conversation
 	};
@@ -45,9 +46,12 @@ namespace Congamoeba.GameStateMachine
 			_currentStateType = newState;
 			CurrentState.OnEnter ();
 
-			MixableCamera.ToCamera = CurrentState.StateCamera;
+			if (CurrentState.StateCamera != null)
+			{
+				MixableCamera.ToCamera = CurrentState.StateCamera;
 
-			MixableCamera.Reset ();
+				MixableCamera.Reset ();
+			}
 		}
 
 		void OnEnable()
@@ -55,26 +59,16 @@ namespace Congamoeba.GameStateMachine
 			_instance = this;
 			_states = new Dictionary<eGameState, IGameState>
 			{
+				{ eGameState.Load, new LoadState() },
 				{ eGameState.FreeMove, new FreeMoveState(FreeMoveCamera, Player) },
 				{ eGameState.Conversation, new ConversationState(ConversationCamera, Player) }
 			};
-			ChangeGameState (eGameState.FreeMove);
+			ChangeGameState (eGameState.Load);
 		}
 
 		void Update()
 		{
 			CurrentState.Update ();
-			if (Input.GetKeyDown (KeyCode.Space))
-			{
-				if (_currentStateType == eGameState.Conversation)
-				{
-					ChangeGameState (eGameState.FreeMove);
-				}
-				else
-				{
-					ChangeGameState (eGameState.Conversation);
-				}
-			}
 		}
 
 		void OnDisable()
