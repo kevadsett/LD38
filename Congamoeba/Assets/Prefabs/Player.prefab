@@ -481,7 +481,7 @@ MonoBehaviour:
   Acceleration: {x: 0, y: 0, z: 0}
   AccelRate: 20
   Damping: 0.02
-  MaxVelocity: 2
+  MaxVelocity: 3
   AmoebaGraphics: {fileID: 114000010474683784}
 --- !u!114 &114000011858678380
 MonoBehaviour:
@@ -492,8 +492,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30584d6acd68c40f58420cb175e75b8a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012415031522
 MonoBehaviour:
   m_ObjectHideFlags: 1

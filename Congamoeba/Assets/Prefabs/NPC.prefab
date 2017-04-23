@@ -388,7 +388,7 @@ MonoBehaviour:
   Acceleration: {x: 0, y: 0, z: 0}
   AccelRate: 20
   Damping: 0.02
-  MaxVelocity: 2
+  MaxVelocity: 3
   AmoebaGraphics: {fileID: 114000013713174196}
 --- !u!114 &114000013713174196
 MonoBehaviour:
@@ -433,14 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45155d4cd5c594b538835b9462d2cf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  YaySounds:
-  - {fileID: 0}
-  NaySounds:
-  - {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
-  YaySounds:
-  - {fileID: 8300000, guid: 76f0d36574ecc4817832a9dd757a3c3b, type: 3}
-  NaySounds:
-  - {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
   YaySound: {fileID: 11400000, guid: c555e701a2cee4d408d1f21d245e2c98, type: 2}
   NaySound: {fileID: 11400000, guid: 325b9de7da4b6400fb9de023e9046a59, type: 2}
   CurrentStateType: 0
