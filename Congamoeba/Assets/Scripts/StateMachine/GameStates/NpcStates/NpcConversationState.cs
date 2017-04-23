@@ -40,8 +40,8 @@ namespace Congamoeba.NPC
 
 		private int _syllableIndex;
 
-		private List<AudioClip> _yaySounds;
-		private List<AudioClip> _naySounds;
+		private SyllableData _yaySound;
+		private SyllableData _naySound;
 
 		private PlayerSounds _playerSounds;
 
@@ -49,15 +49,15 @@ namespace Congamoeba.NPC
 
 		public NpcConversationState (
 			NpcStateMachine npcStateMachine,
-			List<AudioClip> yaySounds,
-			List<AudioClip> naySounds,
+			SyllableData yaySound,
+			SyllableData naySound,
 			PlayerSounds playerSounds
 		) {
 			_currentState = eConversationState.talking;
 			_audioSource = npcStateMachine.gameObject.GetComponent<AudioSource> ();
 			_stateMachine = npcStateMachine;
-			_yaySounds = yaySounds;
-			_naySounds = naySounds;
+			_yaySound = yaySound;
+			_naySound = naySound;
 			_playerSounds = playerSounds;
 		}
 
@@ -101,11 +101,11 @@ namespace Congamoeba.NPC
 				switch (_reaction)
 				{
 				case eReactionType.yay:
-					_audioSource.clip = _yaySounds[Random.Range(0, _yaySounds.Count - 1)];
+					_audioSource.clip = ConversationService.GetNpcClip(_yaySound.name, _stateMachine.VoiceSettings);
 					_stateMachine.ChangeState (eNpcState.Following);
 					break;
 				case eReactionType.nay:
-					_audioSource.clip = _naySounds[Random.Range(0, _naySounds.Count - 1)];
+					_audioSource.clip = ConversationService.GetNpcClip(_naySound.name, _stateMachine.VoiceSettings);
 					_stateMachine.ChangeState (eNpcState.Idling);
 					break;
 				}
@@ -130,7 +130,7 @@ namespace Congamoeba.NPC
 			SentenceData sentence = _conversation.NpcSentences [_sentenceIndex];
 			SyllableData syllable = sentence.Syllables [_syllableIndex];
 
-			_audioSource.clip = ConversationService.GetNpcClip (syllable.Input, _stateMachine.VoiceSettings);
+			_audioSource.clip = ConversationService.GetNpcClip (syllable.name, _stateMachine.VoiceSettings);
 			_audioSource.Play ();
 
 			if (_syllableIndex < sentence.Syllables.Count - 1)

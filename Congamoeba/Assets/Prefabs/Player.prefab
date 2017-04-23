@@ -95,6 +95,7 @@ GameObject:
   - 114: {fileID: 114000013104512588}
   - 82: {fileID: 82000013902765994}
   - 114: {fileID: 114000010793090452}
+  - 114: {fileID: 114000011858678380}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -482,6 +483,17 @@ MonoBehaviour:
   Damping: 0.02
   MaxVelocity: 2
   AmoebaGraphics: {fileID: 114000010474683784}
+--- !u!114 &114000011858678380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013518829790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30584d6acd68c40f58420cb175e75b8a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &114000012415031522
 MonoBehaviour:
   m_ObjectHideFlags: 1

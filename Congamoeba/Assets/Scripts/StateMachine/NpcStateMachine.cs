@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Congamoeba.Player;
+using Congamoeba.Conversations;
 
 namespace Congamoeba.NPC
 {
@@ -23,8 +24,8 @@ namespace Congamoeba.NPC
 	{
 		public Dictionary<eNpcState, IGameState> _states;
 
-		public List<AudioClip> YaySounds;
-		public List<AudioClip> NaySounds;
+		public SyllableData YaySound;
+		public SyllableData NaySound;
 
 		public eNpcState CurrentStateType;
 
@@ -41,12 +42,12 @@ namespace Congamoeba.NPC
 			PlayerSounds playerSounds = GameObject.Find ("Player").GetComponent<PlayerSounds> ();
 			_states = new Dictionary<eNpcState, IGameState> {
 				{ eNpcState.Idling, new IdlingState (gameObject) },
-				{ eNpcState.Conversation, new NpcConversationState (this, YaySounds, NaySounds, playerSounds) },
+				{ eNpcState.Conversation, new NpcConversationState (this, YaySound, NaySound, playerSounds) },
 				{ eNpcState.Following, new FollowState (gameObject) }
 			};
 			VoiceSettings = new VoiceData
 			{
-				Id = Random.Range (0, NpcVoiceCount - 1),
+				Id = Random.Range (0, NpcVoiceCount),
 				Pitch = 1 + (Random.value * 0.2f - 0.1f)
 			};
 			ChangeState (eNpcState.Idling);

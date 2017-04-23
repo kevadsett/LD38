@@ -44,14 +44,14 @@ namespace Congamoeba.Conversations
 				{
 					_playerClips.Add (syllable.Input, syllable.PlayerAudioClip);
 				}
-				if (_npcClips.ContainsKey (syllable.Input) == false)
+				if (_npcClips.ContainsKey (syllable.name) == false)
 				{
 					List<AudioClip> clipList = new List<AudioClip> ();
 					foreach (AudioClip clip in syllable.NpcAudioClips)
 					{
 						clipList.Add (clip);
 					}
-					_npcClips.Add (syllable.Input, clipList);
+					_npcClips.Add (syllable.name, clipList);
 				}
 			}
 		}
@@ -80,23 +80,14 @@ namespace Congamoeba.Conversations
 			return _playerClips [input];
 		}
 
-		public static AudioClip GetNpcClip(string input, VoiceData npcVoiceData)
+		public static AudioClip GetNpcClip(string syllableName, VoiceData npcVoiceData)
 		{
-			return _npcClips [input][npcVoiceData.Id];
+			return _npcClips [syllableName][npcVoiceData.Id];
 		}
 
 		public static void IncreaseDifficulty()
 		{
 			_difficulty++;
 		}
-//		public static string GetSentenceString(SentenceData sentence)
-//		{
-//			string sentenceString = "";
-//			foreach (SyllableData syllable in sentence.Syllables)
-//			{
-//				sentenceString += syllable.Character;
-//			}
-//			return sentenceString.ToLower();
-//		}
 	}
 }

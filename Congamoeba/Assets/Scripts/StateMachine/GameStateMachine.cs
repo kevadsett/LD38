@@ -7,7 +7,8 @@ namespace Congamoeba.GameStateMachine
 	{
 		Load,
 		FreeMove,
-		Conversation
+		Conversation,
+		GrowAndMerge
 	};
 
 	public class GameStateMachine : MonoBehaviour {
@@ -15,6 +16,7 @@ namespace Congamoeba.GameStateMachine
 
 		public Camera FreeMoveCamera;
 		public Camera ConversationCamera;
+		public Camera GrowAndMergeCamera;
 
 		public GameObject Player;
 
@@ -61,7 +63,8 @@ namespace Congamoeba.GameStateMachine
 			{
 				{ eGameState.Load, new LoadState() },
 				{ eGameState.FreeMove, new FreeMoveState(FreeMoveCamera, Player) },
-				{ eGameState.Conversation, new ConversationState(ConversationCamera, Player) }
+				{ eGameState.Conversation, new ConversationState(ConversationCamera, Player) },
+				{ eGameState.GrowAndMerge, new GrowAndMergeState(GrowAndMergeCamera, Player) }
 			};
 			ChangeGameState (eGameState.Load);
 		}
