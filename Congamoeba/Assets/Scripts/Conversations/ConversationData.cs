@@ -1,13 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Congamoeba.Conversations
 {
 	[CreateAssetMenu]
 	public class ConversationData : ScriptableObject
 	{
-		public AudioClip AudioClip;
-		public string String;
+		public List<SentenceData> Sentences;
 		public int Difficulty;
+	}
+
+	[CreateAssetMenu]
+	public class SentenceData : ScriptableObject
+	{
+		public List<SyllableData> Syllables;
+	}
+
+	[CreateAssetMenu]
+	public class SyllableData : ScriptableObject
+	{
+		public AudioClip PlayerAudioClip;
+		public AudioClip NpcAudioClip;
+		public char Character;
 	}
 }

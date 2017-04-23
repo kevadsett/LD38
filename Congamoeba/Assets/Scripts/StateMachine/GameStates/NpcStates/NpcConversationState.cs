@@ -1,7 +1,7 @@
-﻿using System;
-using Congamoeba.Conversations;
+﻿using Congamoeba.Conversations;
 using Congamoeba.GameStateMachine;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Congamoeba.NPC
 {
@@ -35,12 +35,23 @@ namespace Congamoeba.NPC
 
 		private int _stringPosition;
 
-		public NpcConversationState (NpcStateMachine npcStateMachine)
+		private bool _startedSpeaking;
+
+		private int _sentenceIndex;
+
+		private int _syllableIndex;
+
+		private List<AudioClip> _yaySounds;
+		private List<AudioClip> _naySounds;
+
+		public NpcConversationState (NpcStateMachine npcStateMachine, List<AudioClip> yaySounds, List<AudioClip> naySounds)
 		{
-			_conversation = ConversationService.GetConversation ("Hi");
+			_conversation = ConversationService.GetConversation (npcStateMachine.Difficulty);
 			_currentState = eConversationState.talking;
 			_audioSource = npcStateMachine.gameObject.GetComponent<AudioSource> ();
 			_stateMachine = npcStateMachine;
+			_yaySounds = yaySounds;
+			_naySounds = naySounds;
 		}
 
 		public void OnEnter()
@@ -48,6 +59,9 @@ namespace Congamoeba.NPC
 			_stringPosition = 0;
 			_reaction = eReactionType.moreInfoNeeded;
 			_currentState = eConversationState.talking;
+			_startedSpeaking = false;
+			_sentenceIndex = 0;
+			_syllableIndex = 0;
 		}
 
 		public void Update()
@@ -56,11 +70,6 @@ namespace Congamoeba.NPC
 			{
 			case eConversationState.talking:
 				Speak ();
-				Debug.Log (_conversation.name);
-				if (_audioSource.isPlaying == false)
-				{
-					_currentState = eConversationState.listening;
-				}
 				break;
 			case eConversationState.listening:
 				JudgeKeys ();
@@ -73,15 +82,18 @@ namespace Congamoeba.NPC
 				switch (_reaction)
 				{
 				case eReactionType.yay:
+					_audioSource.clip = _yaySounds[Random.Range(0, _yaySounds.Count - 1)];
 					Debug.Log ("Yay");
 //					_stateMachine.ChangeState (eNpcState.Following);
 					_stateMachine.ChangeState (eNpcState.Idling);
 					break;
 				case eReactionType.nay:
+					_audioSource.clip = _naySounds[Random.Range(0, _naySounds.Count - 1)];
 					Debug.Log ("Nay");
 					_stateMachine.ChangeState (eNpcState.Idling);
 					break;
 				}
+				_audioSource.Play ();
 				GameStateMachine.GameStateMachine.ChangeState (eGameState.FreeMove);
 				break;
 			}
@@ -93,10 +105,25 @@ namespace Congamoeba.NPC
 
 		private void Speak ()
 		{
-			if (_conversation.AudioClip != null)
+			_startedSpeaking = true;
+			if (_audioSource.isPlaying)
 			{
-				_audioSource.clip = _conversation.AudioClip;
-				_audioSource.Play ();
+				return;
+			}
+
+			SentenceData sentence = _conversation.Sentences [_sentenceIndex];
+			SyllableData syllable = sentence.Syllables [_syllableIndex];
+
+			_audioSource.clip = syllable.NpcAudioClip;
+			_audioSource.Play ();
+
+			if (_syllableIndex < sentence.Syllables.Count - 1)
+			{
+				_syllableIndex++;
+			}
+			else
+			{
+				_currentState = eConversationState.listening;
 			}
 		}
 
@@ -116,11 +143,13 @@ namespace Congamoeba.NPC
 					return;
 				}
 
-				Debug.Log (string.Format("Got {0}. Expecting {1}", Input.inputString, _conversation.String[_stringPosition]));
-				if (Input.inputString.ToLower().ToCharArray()[0] == _conversation.String.ToLower()[_stringPosition])
+				string sentenceString = ConversationService.GetSentenceString (_conversation.Sentences [_sentenceIndex]);
+
+				Debug.Log (string.Format("Got {0}. Expecting {1}", Input.inputString, sentenceString[_stringPosition]));
+				if (inputChar == sentenceString[_stringPosition])
 				{
 					_stringPosition++;
-					if (_stringPosition == _conversation.String.Length)
+					if (_stringPosition == sentenceString.Length)
 					{
 						_reaction = eReactionType.yay;
 					}
