@@ -17,13 +17,18 @@ namespace Congamoeba.NPC
 	{
 		public Dictionary<eNpcState, IGameState> _states;
 
+		public List<AudioClip> YaySounds;
+		public List<AudioClip> NaySounds;
+
 		private IGameState _currentState;
+
+		public int Difficulty;
 
 		void Awake()
 		{
 			_states = new Dictionary<eNpcState, IGameState> {
 				{ eNpcState.Idling, new IdlingState (gameObject) },
-				{ eNpcState.Conversation, new NpcConversationState (this) },
+				{ eNpcState.Conversation, new NpcConversationState (this, YaySounds, NaySounds) },
 //				{ eNpcState.Following, new FollowingState() }
 			};
 			ChangeState (eNpcState.Idling);

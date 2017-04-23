@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Congamoeba.NPC;
 
 public class NpcGeneration : MonoBehaviour {
 	public GameObject NpcPrefab;
@@ -40,6 +41,7 @@ public class NpcGeneration : MonoBehaviour {
 					float y = bandDistance * Mathf.Sin (angle) + ((Random.value * 2) - 1) * Randomisation;
 
 					GameObject npc = GameObject.Instantiate (NpcPrefab);
+					npc.GetComponent<NpcStateMachine> ().Difficulty = i;
 					npc.transform.position = new Vector3 (x, y, npc.transform.position.z);
 					_totalCreatedNpcs++;
 				}

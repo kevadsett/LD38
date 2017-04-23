@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1a400b3580c44427a444676bd038698, type: 3}
-  m_Name: Hi
-  m_EditorClassIdentifier:
-  AudioClip: {fileID: 0}
-  String: hi
+  m_Name: Greeting
+  m_EditorClassIdentifier: 
+  Sentences:
+  - {fileID: 11400000, guid: 635ef7818ac0d448cbaca567545f229b, type: 2}
   Difficulty: 0

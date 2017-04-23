@@ -73,8 +73,11 @@ namespace Congamoeba.GameStateMachine
 
 		void OnDisable()
 		{
-			CurrentState.OnExit ();
-			CurrentState = null;
+			if (CurrentState != null)
+			{
+				CurrentState.OnExit ();
+				CurrentState = null;
+			}
 			_instance = null;
 		}
 	}

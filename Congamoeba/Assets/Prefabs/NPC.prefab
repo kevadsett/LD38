@@ -208,8 +208,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a7462e58bc15429fa17017d780aa819, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Acceleration: {x: 0, y: 0}
   Damping: 0.12
   MaxVelocity: 1
@@ -224,3 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45155d4cd5c594b538835b9462d2cf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YaySounds:
+  - {fileID: 8300000, guid: 7219e496a1cd343f3b78c4f9da6b6723, type: 3}
+  NaySounds:
+  - {fileID: 8300000, guid: 07a3dc9b7f5a34fe287a48fd44685209, type: 3}
+  - {fileID: 8300000, guid: 5b6eb0b28f3c8401ea00f41e4c4eb6e5, type: 3}
+  - {fileID: 8300000, guid: 11cb8b6bbee404d3ea6b5fdcf087e9fc, type: 3}
