@@ -38,7 +38,7 @@ namespace Congamoeba.GameStateMachine
 
 		private void ChangeGameState(eGameState newState)
 		{
-			Debug.Log(string.Format("Changing game state{0} to {1}", (CurrentState != null ? " from " + _currentStateType : ""), newState));
+			//Debug.Log(string.Format("Changing game state{0} to {1}", (CurrentState != null ? " from " + _currentStateType : ""), newState));
 			if (CurrentState != null)
 			{
 				CurrentState.OnExit ();

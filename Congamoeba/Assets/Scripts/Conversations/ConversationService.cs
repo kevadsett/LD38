@@ -76,7 +76,7 @@ namespace Congamoeba.Conversations
 
 		public static AudioClip GetPlayerClip(string input)
 		{
-			Debug.Log (input);
+			//Debug.Log (input);
 			return _playerClips [input];
 		}
 
