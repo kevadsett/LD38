@@ -148,10 +148,10 @@ Material:
       second: {r: 0, g: 1, b: 0.91724133, a: 1}
     - first:
         name: _Colour
-      second: {r: 1, g: 0.6413793, b: 0, a: 1}
+      second: {r: 1, g: 0.93103456, b: 0, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Fade
-      second: {r: 0.88235295, g: 0.47204986, b: 0.032439426, a: 0.291}
+      second: {r: 0.9411765, g: 0.5647059, b: 0, a: 0.291}
