@@ -143,8 +143,20 @@ namespace Congamoeba.NPC
 			}
 		}
 
+		private bool AnyKeyDown()
+		{
+			return Input.GetButtonDown ("Sfx0") || Input.GetButtonDown ("Sfx1")
+				|| Input.GetButtonDown ("Sfx2") || Input.GetButtonDown ("Sfx3")
+				|| Input.GetButtonDown ("Sfx4");
+		}
+
 		private void JudgeKeys()
 		{
+			if (AnyKeyDown() == false)
+			{
+				return;
+			}
+
 			SentenceData sentence = _conversation.PlayerSentences [_sentenceIndex];
 
 			if (Input.GetButtonDown (sentence.Syllables [_stringPosition].Input))
