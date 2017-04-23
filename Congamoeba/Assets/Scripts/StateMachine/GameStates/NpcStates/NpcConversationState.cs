@@ -47,6 +47,8 @@ namespace Congamoeba.NPC
 
 		private float _timeReactingStarted;
 
+		private CuteWeeFace _face;
+
 		public NpcConversationState (
 			NpcStateMachine npcStateMachine,
 			SyllableData yaySound,
@@ -59,6 +61,8 @@ namespace Congamoeba.NPC
 			_yaySound = yaySound;
 			_naySound = naySound;
 			_playerSounds = playerSounds;
+
+			_face = npcStateMachine.GetComponentInChildren<CuteWeeFace> ();
 		}
 
 		public void OnEnter()
@@ -110,6 +114,8 @@ namespace Congamoeba.NPC
 					break;
 				}
 				_audioSource.Play ();
+				_face.SayWord ();
+
 				GameStateMachine.GameStateMachine.ChangeState (eGameState.FreeMove);
 				break;
 			}
@@ -132,6 +138,8 @@ namespace Congamoeba.NPC
 
 			_audioSource.clip = ConversationService.GetNpcClip (syllable.name, _stateMachine.VoiceSettings);
 			_audioSource.Play ();
+
+			_face.SayWord ();
 
 			if (_syllableIndex < sentence.Syllables.Count - 1)
 			{
