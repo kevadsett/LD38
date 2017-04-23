@@ -11,6 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a400b3580c44427a444676bd038698, type: 3}
   m_Name: l1i4
   m_EditorClassIdentifier: 
-  NpcSentences: []
-  PlayerSentences: []
-  Difficulty: 0
+  NpcSentences:
+  - {fileID: 11400000, guid: 5bfc330f55e274bb3b6ffe2fd25f0bbf, type: 2}
+  - {fileID: 11400000, guid: e18c11eab3db044e9ba93c406501a2d9, type: 2}
+  - {fileID: 11400000, guid: 04bdc1438fee4497899ebf1569cc1d16, type: 2}
+  - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
+  PlayerSentences:
+  - {fileID: 11400000, guid: 5bfc330f55e274bb3b6ffe2fd25f0bbf, type: 2}
+  - {fileID: 11400000, guid: e18c11eab3db044e9ba93c406501a2d9, type: 2}
+  - {fileID: 11400000, guid: 04bdc1438fee4497899ebf1569cc1d16, type: 2}
+  - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
+  Difficulty: 3

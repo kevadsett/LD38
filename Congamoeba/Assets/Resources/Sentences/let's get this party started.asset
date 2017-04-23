@@ -11,4 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3ebde538d2d4de4989ac31ee228faf, type: 3}
   m_Name: let's get this party started
   m_EditorClassIdentifier: 
-  Syllables: []
+  Syllables:
+  - {fileID: 11400000, guid: f0f6fda0bd1c3447f9468ba161e40f6c, type: 2}
+  - {fileID: 11400000, guid: 325b9de7da4b6400fb9de023e9046a59, type: 2}
+  - {fileID: 11400000, guid: 3205bf1a2d2bd4f35bf414e06fca28c0, type: 2}

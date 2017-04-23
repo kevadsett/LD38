@@ -45,8 +45,15 @@ namespace Congamoeba.GameStateMachine
 
 		public void OnExit()
 		{
-			_playerMovementController.Stop();
-			_player.GetComponent<CollisionStateChanger> ().enabled = false;
+			if (_playerMovementController != null)
+			{
+				_playerMovementController.Stop ();
+			}
+
+			if (_player != null)
+			{
+				_player.GetComponent<CollisionStateChanger> ().enabled = false;
+			}
 		}
 	}
 }

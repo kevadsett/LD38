@@ -35,34 +35,17 @@ namespace Congamoeba.Conversations
 						new List<ConversationData> () { conversation }
 					);
 				}
+			}
 
-				foreach (SentenceData sentence in conversation.PlayerSentences)
+			foreach (SyllableData syllable in Resources.LoadAll<SyllableData> ("Syllables"))
+			{
+				if (_playerClips.ContainsKey (syllable.Input) == false && syllable.Input != "")
 				{
-					foreach (SyllableData syllable in sentence.Syllables)
-					{
-						if (_playerClips.ContainsKey (syllable.Input) == false)
-						{
-							_playerClips.Add (syllable.Input, syllable.PlayerAudioClip);
-						}
-						if (_npcClips.ContainsKey (syllable.Input) == false)
-						{
-							_npcClips.Add (syllable.Input, syllable.NpcAudioClip);
-						}
-					}
+					_playerClips.Add (syllable.Input, syllable.PlayerAudioClip);
 				}
-				foreach (SentenceData sentence in conversation.NpcSentences)
+				if (_npcClips.ContainsKey (syllable.Input) == false)
 				{
-					foreach (SyllableData syllable in sentence.Syllables)
-					{
-						if (_playerClips.ContainsKey (syllable.Input) == false)
-						{
-							_playerClips.Add (syllable.Input, syllable.PlayerAudioClip);
-						}
-						if (_npcClips.ContainsKey (syllable.Input) == false)
-						{
-							_npcClips.Add (syllable.Input, syllable.NpcAudioClip);
-						}
-					}
+					_npcClips.Add (syllable.Input, syllable.NpcAudioClip);
 				}
 			}
 		}
@@ -87,6 +70,7 @@ namespace Congamoeba.Conversations
 
 		public static AudioClip GetPlayerClip(string input)
 		{
+			Debug.Log (input);
 			return _playerClips [input];
 		}
 

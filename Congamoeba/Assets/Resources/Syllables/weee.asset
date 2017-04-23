@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7f5fa2834464d9480c4376ff9c8365, type: 3}
   m_Name: weee
   m_EditorClassIdentifier: 
-  PlayerAudioClip: {fileID: 0}
-  NpcAudioClip: {fileID: 0}
-  Input: 
+  PlayerAudioClip: {fileID: 8300000, guid: d592a491d54584ad89ab34ce6701ba67, type: 3}
+  NpcAudioClip: {fileID: 8300000, guid: d592a491d54584ad89ab34ce6701ba67, type: 3}
+  Input: Sfx3

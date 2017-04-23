@@ -38,6 +38,11 @@ namespace Congamoeba.Player
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx3");
 				_audioSource.Play ();
 			}
+			if (Input.GetButtonDown ("Sfx4"))
+			{
+				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx4");
+				_audioSource.Play ();
+			}
 		}
 
 		public void Enable()

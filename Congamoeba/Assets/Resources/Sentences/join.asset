@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3ebde538d2d4de4989ac31ee228faf, type: 3}
   m_Name: join
   m_EditorClassIdentifier: 
-  Syllables: []
+  Syllables:
+  - {fileID: 11400000, guid: 3205bf1a2d2bd4f35bf414e06fca28c0, type: 2}
+  - {fileID: 11400000, guid: 3205bf1a2d2bd4f35bf414e06fca28c0, type: 2}

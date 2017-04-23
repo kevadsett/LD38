@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7f5fa2834464d9480c4376ff9c8365, type: 3}
   m_Name: uhuh
   m_EditorClassIdentifier: 
-  PlayerAudioClip: {fileID: 0}
-  NpcAudioClip: {fileID: 0}
-  Input: 
+  PlayerAudioClip: {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
+  NpcAudioClip: {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
+  Input: Sfx2

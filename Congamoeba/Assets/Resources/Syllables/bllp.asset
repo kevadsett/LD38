@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7f5fa2834464d9480c4376ff9c8365, type: 3}
   m_Name: bllp
   m_EditorClassIdentifier: 
-  PlayerAudioClip: {fileID: 0}
-  NpcAudioClip: {fileID: 0}
+  PlayerAudioClip: {fileID: 8300000, guid: 10d973fe08ca4468398b9e0cc9a74183, type: 3}
+  NpcAudioClip: {fileID: 8300000, guid: 10d973fe08ca4468398b9e0cc9a74183, type: 3}
   Input: 
