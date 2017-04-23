@@ -24,9 +24,9 @@ namespace Congamoeba.NPC
 			_states = new Dictionary<eNpcState, IGameState> {
 				{ eNpcState.Idling, new IdlingState (gameObject) },
 				{ eNpcState.Conversation, new NpcConversationState (this) },
-//				{ eNpcState.Following, new FollowingState() }
+				{ eNpcState.Following, new FollowState (gameObject) },
 			};
-			ChangeState (eNpcState.Idling);
+			ChangeState (eNpcState.Following);
 		}
 
 		public void ChangeState(eNpcState newState)

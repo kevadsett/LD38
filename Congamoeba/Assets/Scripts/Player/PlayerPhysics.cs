@@ -5,20 +5,20 @@ namespace Congamoeba.Player
 	public class PlayerPhysics : MonoBehaviour
 	{
 		[HideInInspector]
-		public Vector2 Acceleration;
+		public Vector3 Acceleration;
 
-		[RangeAttribute(0, 1)]
+		[RangeAttribute(0, 100)]
 		public float AccelRate;
 
 		[RangeAttribute(0, 1)]
 		public float Damping;
 
-		[RangeAttribute(0, 1)]
+		[RangeAttribute(0, 100)]
 		public float MaxVelocity;
 
 		public AmoebaFace AmoebaGraphics;
 
-		private Vector2 _velocity;
+		private Vector3 _velocity;
 
 		void Update ()
 		{
@@ -40,7 +40,7 @@ namespace Congamoeba.Player
 				AmoebaGraphics.UpdateDirection (_velocity);
 			}
 
-			transform.position = new Vector3(transform.position.x + _velocity.x, transform.position.y + _velocity.y);
+			transform.position += _velocity * Time.deltaTime;
 		}
 
 		public void Stop()
