@@ -436,4 +436,5 @@ MonoBehaviour:
   NaySounds:
   - {fileID: 8300000, guid: 5e1f8b13a3b1b4115856f5794cb8ae51, type: 3}
   CurrentStateType: 0
+  NpcVoiceCount: 3
   Difficulty: 0

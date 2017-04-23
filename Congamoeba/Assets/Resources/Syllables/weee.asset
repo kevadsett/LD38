@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: weee
   m_EditorClassIdentifier: 
   PlayerAudioClip: {fileID: 8300000, guid: d592a491d54584ad89ab34ce6701ba67, type: 3}
-  NpcAudioClip: {fileID: 8300000, guid: d592a491d54584ad89ab34ce6701ba67, type: 3}
+  NpcAudioClips:
+  - {fileID: 8300000, guid: ad1ad820b53a3473c91a5da8a6195c98, type: 3}
+  - {fileID: 8300000, guid: 6b48e90e33c2246bbb99727064bd62bf, type: 3}
+  - {fileID: 8300000, guid: 23270dc7d87c64852a52fc8338421ed7, type: 3}
   Input: Sfx3

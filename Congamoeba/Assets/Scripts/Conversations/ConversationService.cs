@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Congamoeba.NPC;
 
 namespace Congamoeba.Conversations
 {
@@ -11,7 +12,7 @@ namespace Congamoeba.Conversations
 		private static Dictionary<int, List<ConversationData>> _conversationsByDifficulty;
 
 		private static Dictionary<string, AudioClip> _playerClips = new Dictionary<string, AudioClip>();
-		private static Dictionary<string, AudioClip> _npcClips = new Dictionary<string, AudioClip>();
+		private static Dictionary<string, List<AudioClip>> _npcClips = new Dictionary<string, List<AudioClip>>();
 
 		private static int _difficulty;
 
@@ -45,7 +46,12 @@ namespace Congamoeba.Conversations
 				}
 				if (_npcClips.ContainsKey (syllable.Input) == false)
 				{
-					_npcClips.Add (syllable.Input, syllable.NpcAudioClip);
+					List<AudioClip> clipList = new List<AudioClip> ();
+					foreach (AudioClip clip in syllable.NpcAudioClips)
+					{
+						clipList.Add (clip);
+					}
+					_npcClips.Add (syllable.Input, clipList);
 				}
 			}
 		}
@@ -74,9 +80,9 @@ namespace Congamoeba.Conversations
 			return _playerClips [input];
 		}
 
-		public static AudioClip GetNpcClip(string input)
+		public static AudioClip GetNpcClip(string input, VoiceData npcVoiceData)
 		{
-			return _npcClips [input];
+			return _npcClips [input][npcVoiceData.Id];
 		}
 
 		public static void IncreaseDifficulty()

@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: eep
   m_EditorClassIdentifier: 
   PlayerAudioClip: {fileID: 8300000, guid: 5fa59b0e2854e42fca264be533f57d91, type: 3}
-  NpcAudioClip: {fileID: 8300000, guid: 5fa59b0e2854e42fca264be533f57d91, type: 3}
+  NpcAudioClips:
+  - {fileID: 8300000, guid: e6399193a260e49639952b8a5fbe944f, type: 3}
+  - {fileID: 8300000, guid: 479afeb7de6c44798bc9b3773bc6d632, type: 3}
+  - {fileID: 8300000, guid: c9b6fb8beb1cc43b4bf4f82e0ad75f04, type: 3}
   Input: Sfx0

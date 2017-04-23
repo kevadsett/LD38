@@ -7,7 +7,7 @@ namespace Congamoeba.Conversations
 	public class SyllableData : ScriptableObject
 	{
 		public AudioClip PlayerAudioClip;
-		public AudioClip NpcAudioClip;
+		public List<AudioClip> NpcAudioClips;
 		public string Input;
 	}
 }

@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Name: pah
   m_EditorClassIdentifier: 
   PlayerAudioClip: {fileID: 8300000, guid: d227a878af69545b8b9ab26374b0cf86, type: 3}
-  NpcAudioClip: {fileID: 8300000, guid: d227a878af69545b8b9ab26374b0cf86, type: 3}
+  NpcAudioClips:
+  - {fileID: 8300000, guid: 41ae5cfadbb9b49e6801d38bc9de7813, type: 3}
+  - {fileID: 8300000, guid: 53ef6400262df4cf4bd90002ee5b5866, type: 3}
+  - {fileID: 8300000, guid: 158c57852c40e45eca64c943021a48be, type: 3}
   Input: Sfx4
