@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 [RequireComponent (typeof (MaskableGraphic))]
-public class ImageEnabledButton : MonoBehaviour {
-	[SerializeField] string button;
+public class ImageEnabledAxis : MonoBehaviour {
+	[SerializeField] string axis;
 	[SerializeField] float duration;
 	[SerializeField] bool invert;
 
@@ -20,7 +20,11 @@ public class ImageEnabledButton : MonoBehaviour {
 	void Update () {
 		time -= Time.deltaTime / duration;
 
-		if (Input.GetButton (button) ^ invert) {
+		if (Input.GetAxis (axis) > 0f && !invert) {
+			time = 1f;
+		}
+
+		if (Input.GetAxis (axis) < 0f && invert) {
 			time = 1f;
 		}
 
