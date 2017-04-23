@@ -130,7 +130,7 @@ namespace Congamoeba.NPC
 			SentenceData sentence = _conversation.NpcSentences [_sentenceIndex];
 			SyllableData syllable = sentence.Syllables [_syllableIndex];
 
-			_audioSource.clip = syllable.NpcAudioClip;
+			_audioSource.clip = ConversationService.GetNpcClip (syllable.Input, _stateMachine.VoiceSettings);
 			_audioSource.Play ();
 
 			if (_syllableIndex < sentence.Syllables.Count - 1)
