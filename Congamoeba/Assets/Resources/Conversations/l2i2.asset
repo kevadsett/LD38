@@ -9,12 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1a400b3580c44427a444676bd038698, type: 3}
-  m_Name: l1i5
+  m_Name: l2i2
   m_EditorClassIdentifier: 
   NpcSentences:
-  - {fileID: 11400000, guid: 04bdc1438fee4497899ebf1569cc1d16, type: 2}
+  - {fileID: 11400000, guid: 7edc328a7b878421b9de5b7d26ca2aee, type: 2}
+  - {fileID: 11400000, guid: c577487059da940dc9c9c49a310a21bb, type: 2}
   - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
   PlayerSentences:
-  - {fileID: 11400000, guid: 04bdc1438fee4497899ebf1569cc1d16, type: 2}
+  - {fileID: 11400000, guid: 7edc328a7b878421b9de5b7d26ca2aee, type: 2}
+  - {fileID: 11400000, guid: c577487059da940dc9c9c49a310a21bb, type: 2}
   - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
-  Difficulty: 4
+  Difficulty: 6

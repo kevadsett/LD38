@@ -9,8 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb3ebde538d2d4de4989ac31ee228faf, type: 3}
-  m_Name: what next
+  m_Name: you're the most beautiful amoeba i've ever met
   m_EditorClassIdentifier: 
   Syllables:
-  - {fileID: 11400000, guid: eea6a711d410542c3aadbb90fd548a0e, type: 2}
-  - {fileID: 11400000, guid: 3205bf1a2d2bd4f35bf414e06fca28c0, type: 2}
+  - {fileID: 11400000, guid: f0f6fda0bd1c3447f9468ba161e40f6c, type: 2}
+  - {fileID: 11400000, guid: 9ebc4fe46ab344fc182108a8bf55ce0e, type: 2}
+  - {fileID: 11400000, guid: 9ebc4fe46ab344fc182108a8bf55ce0e, type: 2}
