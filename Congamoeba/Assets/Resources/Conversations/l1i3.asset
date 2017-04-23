@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Name: l1i3
   m_EditorClassIdentifier: 
   NpcSentences:
-  - {fileID: 11400000, guid: 5bfc330f55e274bb3b6ffe2fd25f0bbf, type: 2}
   - {fileID: 11400000, guid: e18c11eab3db044e9ba93c406501a2d9, type: 2}
   - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
   PlayerSentences:
-  - {fileID: 11400000, guid: 5bfc330f55e274bb3b6ffe2fd25f0bbf, type: 2}
   - {fileID: 11400000, guid: e18c11eab3db044e9ba93c406501a2d9, type: 2}
   - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
   Difficulty: 2

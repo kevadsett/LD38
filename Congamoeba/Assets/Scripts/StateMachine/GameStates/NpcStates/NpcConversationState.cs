@@ -181,6 +181,7 @@ namespace Congamoeba.NPC
 						_reaction = eReactionType.yay;
 
 						AudioPlayer.PlaySound ("treblenote0");
+						ConversationService.IncreaseDifficulty ();
 					}
 					else
 					{
@@ -191,7 +192,6 @@ namespace Congamoeba.NPC
 
 						AudioPlayer.PlaySound ("bassnote" + _sentenceIndex);
 					}
-					ConversationService.IncreaseDifficulty ();
 				}
 			}
 			else

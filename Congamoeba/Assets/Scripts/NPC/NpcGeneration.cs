@@ -42,7 +42,7 @@ public class NpcGeneration : MonoBehaviour {
 
 					GameObject npc = GameObject.Instantiate (NpcPrefab);
 					npc.GetComponent<NpcStateMachine> ().Difficulty = i;
-					npc.transform.position = new Vector3 (x, y, npc.transform.position.z);
+					npc.transform.position = new Vector3 (x, y, Random.value);
 					_totalCreatedNpcs++;
 				}
 			}
