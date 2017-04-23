@@ -127,7 +127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010373607550, guid: 1a8d06b53d3924dc9a11b849fd471c64, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a8d06b53d3924dc9a11b849fd471c64, type: 2}
@@ -137,72 +137,6 @@ Camera:
   m_PrefabParentObject: {fileID: 20000010033120794, guid: 9a5e2c60c9df5494f92987566190ffbe,
     type: 2}
   m_PrefabInternal: {fileID: 1964588185}
---- !u!1 &469478109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 469478113}
-  - 33: {fileID: 469478112}
-  - 23: {fileID: 469478110}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &469478110
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469478109}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 525a6c5d12f4d452e8f094b7861ada88, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &469478112
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469478109}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &469478113
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469478109}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 11.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1001 &847510866
 Prefab:
   m_ObjectHideFlags: 0
@@ -240,13 +174,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013282039160, guid: 57a1835eee7b4429c8e0a7047dd0e313, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114000013826682330, guid: 57a1835eee7b4429c8e0a7047dd0e313,
         type: 2}
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 1877764997}
+    - target: {fileID: 20000012266621492, guid: 57a1835eee7b4429c8e0a7047dd0e313,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000012266621492, guid: 57a1835eee7b4429c8e0a7047dd0e313,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000012266621492, guid: 57a1835eee7b4429c8e0a7047dd0e313,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000012266621492, guid: 57a1835eee7b4429c8e0a7047dd0e313,
+        type: 2}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57a1835eee7b4429c8e0a7047dd0e313, type: 2}
   m_IsPrefabParent: 0
@@ -292,6 +246,26 @@ Prefab:
     - target: {fileID: 20000013307284686, guid: e0124878dffec44d08e3865e6913333b,
         type: 2}
       propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000013307284686, guid: e0124878dffec44d08e3865e6913333b,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000013307284686, guid: e0124878dffec44d08e3865e6913333b,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000013307284686, guid: e0124878dffec44d08e3865e6913333b,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.3333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000013307284686, guid: e0124878dffec44d08e3865e6913333b,
+        type: 2}
+      propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

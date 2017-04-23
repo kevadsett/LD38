@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NpcPrefab: {fileID: 1000011932277524, guid: 6b8b920853ef34e2c89dc2b5012c895e, type: 2}
   GenerationBands: 030000000500000007000000
-  DistanceBetweenBands: 8
-  Randomisation: 3
+  DistanceBetweenBands: 5
+  Randomisation: 2

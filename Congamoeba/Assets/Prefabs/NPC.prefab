@@ -367,8 +367,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Acceleration: {x: 0, y: 0}
+  AccelRate: 0
   Damping: 0.12
   MaxVelocity: 1
+  AmoebaGraphics: {fileID: 0}
 --- !u!114 &114000013713174196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,6 +389,8 @@ MonoBehaviour:
   scaleMin: 0.95
   scaleMax: 1.05
   doDebugStuff: 0
+  materialSubject: {fileID: 23000010444211452}
+  matSelection: {fileID: 11400000, guid: cecca3bbb2e9f481187e37fea154e1df, type: 2}
 --- !u!114 &114000013982666372
 MonoBehaviour:
   m_ObjectHideFlags: 1

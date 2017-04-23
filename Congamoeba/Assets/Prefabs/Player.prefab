@@ -206,7 +206,7 @@ Camera:
   m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.09375, g: 0.10689655, b: 0.125, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -273,7 +273,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0cc3728cb99ff48b3b1a80687273919b, type: 2}
+  - {fileID: 2100000, guid: 813359c9bed3e4169b90d63a72cf6c53, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -352,6 +352,8 @@ MonoBehaviour:
   scaleMin: 0.9
   scaleMax: 1.1
   doDebugStuff: 0
+  materialSubject: {fileID: 0}
+  matSelection: {fileID: 0}
 --- !u!114 &114000011188693644
 MonoBehaviour:
   m_ObjectHideFlags: 1

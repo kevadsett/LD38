@@ -9,6 +9,14 @@ public class AmoebaFace : MonoBehaviour {
 	[SerializeField] float scaleMin;
 	[SerializeField] float scaleMax;
 	[SerializeField] bool doDebugStuff;
+	[SerializeField] Renderer materialSubject;
+	[SerializeField] MaterialSelection matSelection;
+
+	void Awake () {
+		if (materialSubject != null && matSelection != null) {
+			materialSubject.sharedMaterial = matSelection.GetRandom ();
+		}
+	}
 
 	// debug editor stuff
 	void Update () {
