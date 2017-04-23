@@ -34,6 +34,8 @@ namespace Congamoeba.GameStateMachine
 			}
 
 			_playerSounds.Enable ();
+
+			_player.GetComponent<CollisionStateChanger> ().enabled = false;
 		}
 
 		public void Update()
@@ -44,6 +46,7 @@ namespace Congamoeba.GameStateMachine
 		public void OnExit()
 		{
 			_playerMovementController.Stop();
+			_player.GetComponent<CollisionStateChanger> ().enabled = false;
 		}
 	}
 }

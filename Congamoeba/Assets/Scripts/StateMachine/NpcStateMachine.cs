@@ -21,6 +21,8 @@ namespace Congamoeba.NPC
 		public List<AudioClip> YaySounds;
 		public List<AudioClip> NaySounds;
 
+		public eNpcState CurrentStateType;
+
 		private IGameState _currentState;
 
 		public int Difficulty;
@@ -43,6 +45,8 @@ namespace Congamoeba.NPC
 				_currentState.OnExit ();
 			}
 			_currentState = _states [newState];
+
+			CurrentStateType = newState;
 			_currentState.OnEnter ();
 		}
 

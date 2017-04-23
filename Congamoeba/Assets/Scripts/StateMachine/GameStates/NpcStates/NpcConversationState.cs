@@ -36,7 +36,6 @@ namespace Congamoeba.NPC
 
 		private int _stringPosition;
 
-
 		private int _sentenceIndex;
 
 		private int _syllableIndex;
@@ -99,12 +98,10 @@ namespace Congamoeba.NPC
 				{
 				case eReactionType.yay:
 					_audioSource.clip = _yaySounds[Random.Range(0, _yaySounds.Count - 1)];
-					Debug.Log ("Yay");
 					_stateMachine.ChangeState (eNpcState.Following);
 					break;
 				case eReactionType.nay:
 					_audioSource.clip = _naySounds[Random.Range(0, _naySounds.Count - 1)];
-					Debug.Log ("Nay");
 					_stateMachine.ChangeState (eNpcState.Idling);
 					break;
 				}

@@ -14,11 +14,16 @@ namespace Congamoeba.Player
 				return;
 			}
 
+			NpcStateMachine npcStateMachine = collision.gameObject.GetComponent<NpcStateMachine> ();
+			if (npcStateMachine.CurrentStateType == eNpcState.Following)
+			{
+				return;
+			}
+
+			npcStateMachine.ChangeState (eNpcState.Conversation);
+
 			ConversationMover conversationMover = collision.gameObject.GetComponent<ConversationMover> ();
 			ConversationState.ConversationPartner = conversationMover;
-
-			NpcStateMachine npcStateMachine = collision.gameObject.GetComponent<NpcStateMachine> ();
-			npcStateMachine.ChangeState (eNpcState.Conversation);
 
 			GameStateMachine.GameStateMachine.ChangeState (eGameState.Conversation);
 		}
