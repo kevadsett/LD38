@@ -110,7 +110,7 @@ namespace Congamoeba.NPC
 					_audioSource.clip = ConversationService.GetNpcClip (_yaySound.name, _stateMachine.VoiceSettings);
 					_stateMachine.ChangeState (eNpcState.Following);
 					_playerSounds.PlaySuccess ();
-					Vector3 scale = _playerSounds.gameObject.transform.localScale;
+//					Vector3 scale = _playerSounds.gameObject.transform.localScale;
 //					_playerSounds.gameObject.transform.localScale = new Vector3 (scale.x * 1.5f, scale.y * 1.5f, scale.z);
 					break;
 				case eReactionType.nay:
