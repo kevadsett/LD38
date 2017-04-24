@@ -67,22 +67,23 @@ public class NpcGeneration : MonoBehaviour {
 		int attempt = 0;
 		const int maxAttempts = 10;
 
-		float direction = Random.value > 0.5 ? 1f : -1f;
-		while (nearestNpcDistance < (SpaceNeeded * scale * SCALE_DAMPER) && attempt < maxAttempts)
-		{
-			float tenthOfPi = Mathf.PI * 0.1f;
-			float angleChange = (Random.value * tenthOfPi);
-			angle += angleChange * direction;
-			distance = GenerationDistance * scale * SCALE_DAMPER + ((Random.value * 10 * scale * SCALE_DAMPER) - 5 * scale * SCALE_DAMPER);
-			x = Player.transform.position.x + distance * Mathf.Cos (angle);
-			y = Player.transform.position.y + distance * Mathf.Sin (angle);
-			nearestNpcDistance = GetNearestNpcDistance (new Vector3 (x, y, 0), out closestNpc);
-			attempt++;
-		}
-		if (attempt == maxAttempts)
+//		float direction = Random.value > 0.5 ? 1f : -1f;
+		if (nearestNpcDistance < (SpaceNeeded * scale * SCALE_DAMPER) && attempt < maxAttempts)
 		{
 			return;
+//			float tenthOfPi = Mathf.PI * 0.1f;
+//			float angleChange = (Random.value * tenthOfPi);
+//			angle += angleChange * direction;
+//			distance = GenerationDistance * scale * SCALE_DAMPER + ((Random.value * 10 * scale * SCALE_DAMPER) - 5 * scale * SCALE_DAMPER);
+//			x = Player.transform.position.x + distance * Mathf.Cos (angle);
+//			y = Player.transform.position.y + distance * Mathf.Sin (angle);
+//			nearestNpcDistance = GetNearestNpcDistance (new Vector3 (x, y, 0), out closestNpc);
+//			attempt++;
 		}
+//		if (attempt == maxAttempts)
+//		{
+//			return;
+//		}
 
 		GameObject npc = GameObject.Instantiate (NpcPrefab);
 		npc.name = "NPC(" + _npcsGenerated + ")";
@@ -97,13 +98,11 @@ public class NpcGeneration : MonoBehaviour {
 
 	private float GetNearestNpcDistance(Vector3 pos, out NpcStateMachine closestNpc)
 	{
-		Debug.Log (_npcs.Count);
 		float closestMag = 9999f;
 		closestNpc = null;
 		foreach (NpcStateMachine npc in _npcs)
 		{
 			float distance = Mathf.Abs ((pos - npc.transform.position).magnitude);
-			Debug.Log (distance);
 			if (distance < closestMag)
 			{
 				closestMag = distance;
@@ -115,7 +114,6 @@ public class NpcGeneration : MonoBehaviour {
 
 	public static void GenerateNewNpc()
 	{
-		Debug.Log ("Generating new npc");
 		if (_instance != null)
 		{
 			_instance.Generate ();

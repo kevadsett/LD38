@@ -29,6 +29,7 @@ namespace Congamoeba.NPC {
 		public void Update () {
 			Transform target = OrderlyQueueficator.GetMyTarget (self);
 			Transform player = PlayerMovementController.PlayerTransform;
+			Transform chatPartner = ConversationState.ChatPartnerTransform;
 
 			Vector3 playerBetween = player.position - self.position;
 			Vector3 accel = new Vector3 (0f, 0f, 0f);
@@ -36,9 +37,20 @@ namespace Congamoeba.NPC {
 			// prioritise avoiding the player, then following, then backing away
 			if (playerBetween.magnitude < innerDist)
 			{
-				accel = new Vector3 (playerBetween.x, playerBetween.y).normalized * -1f;
+				physics.Acceleration = new Vector3 (playerBetween.x, playerBetween.y).normalized * -1f;
+				return;
 			}
-			else if (target != null) {
+			if (chatPartner != null)
+			{
+				Vector3 chatterBetween = chatPartner.position - self.position;
+				if (chatterBetween.magnitude < innerDist)
+				{
+					physics.Acceleration = new Vector3 (chatterBetween.x, chatterBetween.y).normalized * -1f;
+					return;
+				}
+			}
+			if (target != null)
+			{
 				Vector3 between = target.position - self.position;
 
 				if (between.magnitude > outerDist)

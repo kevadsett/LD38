@@ -22,8 +22,6 @@ namespace Congamoeba.GameStateMachine
 
 		public IGameState CurrentState;
 
-		private eGameState _currentStateType;
-
 		private static GameStateMachine _instance;
 
 		private Dictionary<eGameState, IGameState> _states;
@@ -45,7 +43,6 @@ namespace Congamoeba.GameStateMachine
 				MixableCamera.FromCamera = CurrentState.StateCamera;
 			}
 			CurrentState = _states [newState];
-			_currentStateType = newState;
 			CurrentState.OnEnter ();
 
 			if (CurrentState.StateCamera != null)

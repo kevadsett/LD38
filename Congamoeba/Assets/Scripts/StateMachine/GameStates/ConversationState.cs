@@ -6,7 +6,23 @@ namespace Congamoeba.GameStateMachine
 {
 	public class ConversationState : IGameState
 	{
-		public static ConversationMover ConversationPartner;
+		private static ConversationMover _conversationPartner;
+		public static ConversationMover ConversationPartner
+		{
+			get
+			{
+				return _conversationPartner;
+			}
+			set
+			{
+				_conversationPartner = value;
+				if (value != null)
+				{
+					ChatPartnerTransform = _conversationPartner.transform;
+				}
+			}
+		}
+		public static Transform ChatPartnerTransform;
 
 		public Camera StateCamera { get; private set; }
 
@@ -22,13 +38,13 @@ namespace Congamoeba.GameStateMachine
 		public void OnEnter()
 		{
 			ConversationPartner.Enable ();
-			ConversationPartner.MoveIntoConversation (_player.transform.position);
+			ConversationPartner.MoveIntoConversation (_player.transform);
 			if (_playerConversationMover == null)
 			{
 				_playerConversationMover = _player.GetComponent<ConversationMover> ();
 			}
 			_playerConversationMover.Enable ();
-			_playerConversationMover.MoveIntoConversation(_player.transform.position);
+			_playerConversationMover.MoveIntoConversation(_player.transform);
 		}
 
 		public void Update()
@@ -40,11 +56,17 @@ namespace Congamoeba.GameStateMachine
 			ConversationPartner.MoveOutOfConversation ();
 			ConversationPartner.Disable ();
 
-			if (_playerConversationMover == null)
+			if (_player != null &&_playerConversationMover == null)
 			{
 				_playerConversationMover = _player.GetComponent<ConversationMover> ();
 			}
-			_playerConversationMover.Disable ();
+
+			if (_playerConversationMover != null)
+			{
+				_playerConversationMover.Disable ();
+			}
+			ConversationPartner = null;
+			ChatPartnerTransform = null;
 		}
 	}
 }

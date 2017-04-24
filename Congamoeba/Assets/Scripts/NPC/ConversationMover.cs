@@ -46,9 +46,12 @@ namespace Congamoeba.NPC
 			_isEnabled = false;
 		}
 
-		public void MoveIntoConversation(Vector3 playerPosition)
+		public void MoveIntoConversation(Transform playerTransform)
 		{
-			_targetPosition = new Vector2(playerPosition.x + ConversationPosition.x, playerPosition.y + ConversationPosition.y);
+			_targetPosition = new Vector2(
+				(playerTransform.position.x + ConversationPosition.x),
+				(playerTransform.position.y + ConversationPosition.y)
+			);
 			_mixPosition = 0;
 		}
 
