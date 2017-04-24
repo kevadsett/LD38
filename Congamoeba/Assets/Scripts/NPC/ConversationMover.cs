@@ -12,7 +12,7 @@ namespace Congamoeba.NPC
 
 		public float MixSpeed;
 
-		private float _mixPosition;
+		private float _mixPosition = 1.0f;
 
 		private Vector2 _targetPosition;
 
