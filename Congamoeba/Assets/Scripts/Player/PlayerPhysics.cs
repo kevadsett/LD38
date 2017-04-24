@@ -18,7 +18,7 @@ namespace Congamoeba.Player
 
 		public AmoebaFace AmoebaGraphics;
 
-		private Vector3 _velocity;
+		public Vector3 Velocity;
 
 		void Update ()
 		{
@@ -28,25 +28,25 @@ namespace Congamoeba.Player
 				Acceleration = Acceleration.normalized;
 			}
 
-			_velocity += Acceleration * AccelRate * dt;
+			Velocity += Acceleration * AccelRate * dt;
 
-			_velocity *= Mathf.Pow(Damping, dt);
+			Velocity *= Mathf.Pow(Damping, dt);
 			
-			if (_velocity.magnitude > MaxVelocity) {
-				_velocity = _velocity.normalized * MaxVelocity;
+			if (Velocity.magnitude > MaxVelocity) {
+				Velocity = Velocity.normalized * MaxVelocity;
 			}
 
 			if (AmoebaGraphics != null) {
-				AmoebaGraphics.UpdateDirection (_velocity);
+				AmoebaGraphics.UpdateDirection (Velocity);
 			}
 
-			transform.position += _velocity * Time.deltaTime * transform.localScale.x;
+			transform.position += Velocity * Time.deltaTime * transform.localScale.x;
 		}
 
 		public void Stop()
 		{
 			Acceleration = Vector2.zero;
-			_velocity = Vector2.zero;
+			Velocity = Vector2.zero;
 		}
 	}
 }
