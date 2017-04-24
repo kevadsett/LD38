@@ -32,27 +32,27 @@ namespace Congamoeba.Player
 				return;
 			}
 
-			if (Input.GetButtonDown ("Sfx0"))
+			if (ButtonUnlocker.GetButtonDown ("Sfx0"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx0");
 				Play ();
 			}
-			if (Input.GetButtonDown ("Sfx1"))
+			if (ButtonUnlocker.GetButtonDown ("Sfx1"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx1");
 				Play ();
 			}
-			if (Input.GetButtonDown ("Sfx2"))
+			if (ButtonUnlocker.GetButtonDown ("Sfx2"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx2");
 				Play ();
 			}
-			if (Input.GetButtonDown ("Sfx3"))
+			if (ButtonUnlocker.GetButtonDown ("Sfx3"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx3");
 				Play ();
 			}
-			if (Input.GetButtonDown ("Sfx4"))
+			if (ButtonUnlocker.GetButtonDown ("Sfx4"))
 			{
 				_audioSource.clip = ConversationService.GetPlayerClip ("Sfx4");
 				Play ();

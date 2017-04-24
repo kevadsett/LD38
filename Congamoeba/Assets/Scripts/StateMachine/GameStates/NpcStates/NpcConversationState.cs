@@ -144,6 +144,8 @@ namespace Congamoeba.NPC
 			_audioSource.clip = ConversationService.GetNpcClip (syllable.name, _stateMachine.VoiceSettings);
 			_audioSource.Play ();
 
+			ButtonUnlocker.UnlockButton (syllable.Input);
+
 			_face.SayWord ();
 
 			if (_syllableIndex < sentence.Syllables.Count - 1)

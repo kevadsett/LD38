@@ -18,13 +18,18 @@ public class ImageEnabledButton : MonoBehaviour {
 	}
 
 	void Update () {
-		time -= Time.deltaTime / duration;
+		if (ButtonUnlocker.IsButtonUnlocked (button)) {
+			time -= Time.deltaTime / duration;
 
-		if (Input.GetButton (button) ^ invert) {
-			time = 1f;
+			if (Input.GetButton (button) ^ invert) {
+				time = 1f;
+			}
+
+			color.a = Mathf.Clamp01 (time);
+		} else {
+			color.a = 0f;
 		}
 
-		color.a = Mathf.Clamp01 (time);
 		graphic.color = color;
 	}
 }
