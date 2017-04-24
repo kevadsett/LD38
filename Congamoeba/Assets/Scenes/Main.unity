@@ -132,7 +132,7 @@ Prefab:
     - target: {fileID: 114000011041020654, guid: 1a8d06b53d3924dc9a11b849fd471c64,
         type: 2}
       propertyPath: Player
-      value:
+      value: 
       objectReference: {fileID: 1877764997}
     - target: {fileID: 114000011041020654, guid: 1a8d06b53d3924dc9a11b849fd471c64,
         type: 2}
