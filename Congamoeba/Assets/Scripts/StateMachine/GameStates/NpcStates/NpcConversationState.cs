@@ -161,9 +161,9 @@ namespace Congamoeba.NPC
 
 		private bool AnyKeyDown()
 		{
-			return Input.GetButtonDown ("Sfx0") || Input.GetButtonDown ("Sfx1")
-				|| Input.GetButtonDown ("Sfx2") || Input.GetButtonDown ("Sfx3")
-				|| Input.GetButtonDown ("Sfx4");
+			return ButtonUnlocker.GetButtonDown ("Sfx0") || ButtonUnlocker.GetButtonDown ("Sfx1")
+				|| ButtonUnlocker.GetButtonDown ("Sfx2") || ButtonUnlocker.GetButtonDown ("Sfx3")
+				|| ButtonUnlocker.GetButtonDown ("Sfx4");
 		}
 
 		private void JudgeKeys()
