@@ -41,7 +41,6 @@ GameObject:
   - 124: {fileID: 124000012725947056}
   - 81: {fileID: 81000013436526918}
   - 114: {fileID: 114000011654016436}
-  - 114: {fileID: 114000011620848432}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -155,29 +154,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014021216522}
   m_Enabled: 1
---- !u!114 &114000011620848432
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014021216522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 0
-  intensity: 0.1
-  chromaticAberration: 1
-  axialAberration: 0.5
-  blur: 0
-  blurSpread: 1
-  luminanceDependency: 0.25
-  blurDistance: 2.5
-  vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
-  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
-  chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
-    type: 3}
 --- !u!114 &114000011654016436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -616,8 +592,8 @@ ParticleSystem:
     radius: 1
     angle: 25
     length: 5
-    boxX: 25
-    boxY: 15
+    boxX: 30
+    boxY: 17
     boxZ: 0
     arc: 360
     placementMode: 0
@@ -1983,7 +1959,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 841654380
+  randomSeed: -313514539
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -2350,8 +2326,8 @@ ParticleSystem:
     radius: 1
     angle: 25
     length: 5
-    boxX: 25
-    boxY: 15
+    boxX: 30
+    boxY: 17
     boxZ: 0
     arc: 360
     placementMode: 0

@@ -33,6 +33,10 @@ public static class OrderlyQueueficator {
 		return pos * 1f / count;
 	}
 
+	public static float GetLength () {
+		return theQueue.Count;
+	}
+
 	static int GetMyIndex (Transform me) {
 		return theQueue.FindIndex (b => (b == me));
 	}

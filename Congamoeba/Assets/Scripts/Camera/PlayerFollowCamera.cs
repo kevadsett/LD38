@@ -7,13 +7,17 @@ public class PlayerFollowCamera : MonoBehaviour
 	[RangeAttribute (0f, 1f)]
 	public float QueueWeighting;
 
-	private Vector3 _currentVelocity;
+	public float ZoomPerFriend;
+	public float ZoomSpeed;
 
+	private Vector3 _currentVelocity;
 	private Camera _camera;
+	private float _defaultZoom;
 
 	void Awake()
 	{
 		_camera = GetComponent<Camera>();
+		_defaultZoom = _camera.orthographicSize;
 	}
 
 	void LateUpdate ()
@@ -24,6 +28,15 @@ public class PlayerFollowCamera : MonoBehaviour
 
 		transform.position = new Vector3 (camPos.x, camPos.y, transform.position.z);
 
-		_camera.orthographicSize = 4 * PlayerObject.transform.localScale.x;
+		float targetSize = _defaultZoom + ZoomPerFriend * OrderlyQueueficator.GetLength ();
+		float size = _camera.orthographicSize;
+
+		if (size < targetSize) {
+			size = Mathf.Min (targetSize, size + ZoomSpeed * Time.deltaTime);
+		} else if (size > targetSize) {
+			size = Mathf.Max (targetSize, size - ZoomSpeed * Time.deltaTime);
+		}
+
+		_camera.orthographicSize = size;
 	}
 }
