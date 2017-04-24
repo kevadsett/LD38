@@ -9,6 +9,10 @@ namespace Congamoeba.Player
 
 		void OnTriggerEnter2D(Collider2D collision)
 		{
+			if (GameStateMachine.GameStateMachine.CurrentGameState == eGameState.Conversation)
+			{
+				return;
+			}
 			if (collision.gameObject.layer != LayerMask.NameToLayer("NPC"))
 			{
 				return;
