@@ -67,7 +67,11 @@ namespace Congamoeba.NPC
 
 		public void OnEnter()
 		{
-			_conversation = ConversationService.GetConversation ();
+			if (_stateMachine.Conversation == null)
+			{
+				_stateMachine.Conversation = ConversationService.GetConversation ();
+			}
+			_conversation = _stateMachine.Conversation;
 			_stringPosition = 0;
 			_reaction = eReactionType.moreInfoNeeded;
 			_currentState = eConversationState.talking;

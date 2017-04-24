@@ -39,6 +39,8 @@ namespace Congamoeba.NPC
 
 		private IGameState _currentState;
 
+		public ConversationData Conversation;
+
 		void Awake()
 		{
 			PlayerSounds playerSounds = GameObject.Find ("Player").GetComponent<PlayerSounds> ();
@@ -52,6 +54,7 @@ namespace Congamoeba.NPC
 				Id = Random.Range (0, NpcVoiceCount),
 				Pitch = 1 + (Random.value * 0.2f - 0.1f)
 			};
+
 			ChangeState (eNpcState.Idling);
 		}
 
