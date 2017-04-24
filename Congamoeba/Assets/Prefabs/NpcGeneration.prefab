@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012079892360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NpcPrefab: {fileID: 1000011932277524, guid: 6b8b920853ef34e2c89dc2b5012c895e, type: 2}
-  GenerationBands: 030000000500000007000000
-  DistanceBetweenBands: 5
-  Randomisation: 2
+  NumberToGenerate: 15
+  GenerationDistance: 25
+  SpaceNeeded: 10
+  Player: {fileID: 0}

@@ -40,7 +40,7 @@ namespace Congamoeba.Player
 				AmoebaGraphics.UpdateDirection (_velocity);
 			}
 
-			transform.position += _velocity * Time.deltaTime;
+			transform.position += _velocity * Time.deltaTime * transform.localScale.x;
 		}
 
 		public void Stop()

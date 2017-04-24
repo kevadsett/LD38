@@ -31,9 +31,11 @@ namespace Congamoeba.NPC
 
 		public int NpcVoiceCount;
 
-		public int Difficulty;
+		public Transform PlayerTransform;
 
 		public VoiceData VoiceSettings;
+
+		public float KillDistance;
 
 		private IGameState _currentState;
 
@@ -68,6 +70,12 @@ namespace Congamoeba.NPC
 		void Update()
 		{
 			_currentState.Update ();
+			Vector3 distanceToPlayer = transform.position - PlayerTransform.position;
+			if (Mathf.Abs (distanceToPlayer.magnitude) > KillDistance)
+			{
+				NpcGeneration.Kill (this);
+				NpcGeneration.GenerateNewNpc ();
+			}
 		}
 	}
 }

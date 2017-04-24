@@ -9,6 +9,13 @@ public class PlayerFollowCamera : MonoBehaviour
 
 	private Vector3 _currentVelocity;
 
+	private Camera _camera;
+
+	void Awake()
+	{
+		_camera = GetComponent<Camera>();
+	}
+
 	void LateUpdate ()
 	{
 		Vector3 playerPos = PlayerObject.transform.position;
@@ -16,5 +23,7 @@ public class PlayerFollowCamera : MonoBehaviour
 		Vector3 camPos = Vector3.Lerp (playerPos, queuePos, QueueWeighting);
 
 		transform.position = new Vector3 (camPos.x, camPos.y, transform.position.z);
+
+		_camera.orthographicSize = 4 * PlayerObject.transform.localScale.x;
 	}
 }

@@ -21,6 +21,7 @@ namespace Congamoeba.GameStateMachine
 
 		public void OnEnter()
 		{
+//			_player.transform.localScale = new Vector3 (_player.transform.localScale.x + 1, _player.transform.localScale.y + 1, _player.transform.localScale.z);
 			if (_playerMovementController == null)
 			{
 				_playerMovementController = _player.GetComponent<PlayerMovementController> ();
