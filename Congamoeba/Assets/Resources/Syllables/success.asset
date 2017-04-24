@@ -10,10 +10,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca7f5fa2834464d9480c4376ff9c8365, type: 3}
   m_Name: success
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   PlayerAudioClip: {fileID: 8300000, guid: 76f0d36574ecc4817832a9dd757a3c3b, type: 3}
   NpcAudioClips:
   - {fileID: 8300000, guid: 2e4cb07661c8f4f1eb7a5d6ad3318eb9, type: 3}
   - {fileID: 8300000, guid: 51193e584841544f2b23222905d9996e, type: 3}
   - {fileID: 8300000, guid: a0e13a9fc65f64d849e80c5c150da3e9, type: 3}
+  - {fileID: 8300000, guid: 6aeb1932c57e447e5a48240e54332a9c, type: 3}
   Input: Success
+  Sprite: {fileID: 0}

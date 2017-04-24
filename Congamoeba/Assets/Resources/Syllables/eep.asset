@@ -16,5 +16,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e6399193a260e49639952b8a5fbe944f, type: 3}
   - {fileID: 8300000, guid: 479afeb7de6c44798bc9b3773bc6d632, type: 3}
   - {fileID: 8300000, guid: c9b6fb8beb1cc43b4bf4f82e0ad75f04, type: 3}
+  - {fileID: 8300000, guid: 6034f2b544f624796a67c3a69541ae52, type: 3}
   Input: Sfx0
   Sprite: {fileID: 21300000, guid: 82331b4840016471cb958a1c788b5cf9, type: 3}
