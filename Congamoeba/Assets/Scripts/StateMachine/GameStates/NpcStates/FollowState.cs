@@ -14,6 +14,7 @@ namespace Congamoeba.NPC {
 
 		const float outerDist = 1.6f;
 		const float innerDist = 1.3f;
+		const float convoDist = 1.8f;
 
 		public FollowState (GameObject npc) {
 			self = npc.transform;
@@ -43,7 +44,7 @@ namespace Congamoeba.NPC {
 			if (chatPartner != null)
 			{
 				Vector3 chatterBetween = chatPartner.position - self.position;
-				if (chatterBetween.magnitude < innerDist)
+				if (chatterBetween.magnitude < convoDist)
 				{
 					physics.Acceleration = new Vector3 (chatterBetween.x, chatterBetween.y).normalized * -1f;
 					return;
