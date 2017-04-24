@@ -145,6 +145,7 @@ namespace Congamoeba.NPC
 			_audioSource.Play ();
 
 			ButtonUnlocker.UnlockButton (syllable.Input);
+			SyllableIcon.RevealIcon (_syllableIndex, sentence.Syllables.Count, syllable.Sprite);
 
 			_face.SayWord ();
 
@@ -173,9 +174,12 @@ namespace Congamoeba.NPC
 			}
 
 			SentenceData sentence = _conversation.PlayerSentences [_sentenceIndex];
+			SyllableData syllable = sentence.Syllables [_stringPosition];
 
-			if (Input.GetButtonDown (sentence.Syllables [_stringPosition].Input))
+			if (Input.GetButtonDown (syllable.Input))
 			{
+				SyllableIcon.RevealIcon (_stringPosition, sentence.Syllables.Count, syllable.Sprite);
+
 				_stringPosition++;
 				if (_stringPosition == sentence.Syllables.Count)
 				{
@@ -186,6 +190,8 @@ namespace Congamoeba.NPC
 
 						AudioPlayer.PlaySound ("treblenote0");
 						ConversationService.IncreaseDifficulty ();
+
+						SyllableIcon.ResetIcons ();
 					}
 					else
 					{
@@ -201,6 +207,8 @@ namespace Congamoeba.NPC
 			else
 			{
 				_reaction = eReactionType.nay;
+
+				SyllableIcon.ResetIcons ();
 			}
 		}
 	}

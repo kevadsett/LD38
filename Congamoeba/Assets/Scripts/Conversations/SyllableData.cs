@@ -9,5 +9,6 @@ namespace Congamoeba.Conversations
 		public AudioClip PlayerAudioClip;
 		public List<AudioClip> NpcAudioClips;
 		public string Input;
+		public Sprite Sprite;
 	}
 }
