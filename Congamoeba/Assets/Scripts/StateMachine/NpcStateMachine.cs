@@ -71,7 +71,8 @@ namespace Congamoeba.NPC
 		{
 			_currentState.Update ();
 			Vector3 distanceToPlayer = transform.position - PlayerTransform.position;
-			if (Mathf.Abs (distanceToPlayer.magnitude) > KillDistance)
+			if (Mathf.Abs (distanceToPlayer.magnitude) > KillDistance
+				&& CurrentStateType != eNpcState.Following && CurrentStateType != eNpcState.Merging)
 			{
 				NpcGeneration.Kill (this);
 				NpcGeneration.GenerateNewNpc ();
