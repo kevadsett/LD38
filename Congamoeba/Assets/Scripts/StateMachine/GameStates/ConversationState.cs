@@ -53,7 +53,6 @@ namespace Congamoeba.GameStateMachine
 
 		public void OnExit()
 		{
-			ConversationPartner.MoveOutOfConversation ();
 			ConversationPartner.Disable ();
 
 			if (_player != null &&_playerConversationMover == null)

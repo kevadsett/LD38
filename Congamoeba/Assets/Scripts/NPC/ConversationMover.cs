@@ -54,11 +54,5 @@ namespace Congamoeba.NPC
 			);
 			_mixPosition = 0;
 		}
-
-		public void MoveOutOfConversation()
-		{
-			_targetPosition = _originalPosition;
-			_mixPosition = 0;
-		}
 	}
 }
