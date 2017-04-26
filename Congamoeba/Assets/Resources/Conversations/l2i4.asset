@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: l2i4
   m_EditorClassIdentifier: 
   NpcSentences:
-  - {fileID: 11400000, guid: ad828b3612fb94346b2a6ebda229519e, type: 2}
-  - {fileID: 11400000, guid: e9b7547b32e0d4b2bafc483b1f23a2d8, type: 2}
+  - {fileID: 11400000, guid: 584baddfbb4da415da829df6cc038c1a, type: 2}
+  - {fileID: 11400000, guid: fa857fec4b8fe41e382ebf1a4090f655, type: 2}
   - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
   PlayerSentences:
-  - {fileID: 11400000, guid: ad828b3612fb94346b2a6ebda229519e, type: 2}
-  - {fileID: 11400000, guid: e9b7547b32e0d4b2bafc483b1f23a2d8, type: 2}
+  - {fileID: 11400000, guid: 584baddfbb4da415da829df6cc038c1a, type: 2}
+  - {fileID: 11400000, guid: fa857fec4b8fe41e382ebf1a4090f655, type: 2}
   - {fileID: 11400000, guid: 3953ca39a755c4ccf84a318e582ba069, type: 2}
   Difficulty: 7
