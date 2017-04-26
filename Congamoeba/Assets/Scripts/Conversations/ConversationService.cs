@@ -112,7 +112,7 @@ namespace Congamoeba.Conversations
 				}
 				else
 				{
-					int numberOfSyllables = Mathf.Clamp(Random.Range (1, _difficulty - 8), 1, 8);
+					int numberOfSyllables = Random.Range (1, Mathf.Clamp(_difficulty - 8, 1, 8));
 					for (int j = 0; j < numberOfSyllables; j++)
 					{
 						SyllableData syllable = _playableSyllables [Random.Range (0, _playableSyllables.Count)];
