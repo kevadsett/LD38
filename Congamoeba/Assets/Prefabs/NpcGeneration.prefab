@@ -16,10 +16,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010373607550}
-  - 114: {fileID: 114000011041020654}
+  - component: {fileID: 4000010373607550}
+  - component: {fileID: 114000011041020654}
   m_Layer: 0
   m_Name: NpcGeneration
   m_TagString: Untagged
@@ -36,10 +36,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000011041020654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NpcPrefab: {fileID: 1000011932277524, guid: 6b8b920853ef34e2c89dc2b5012c895e, type: 2}
   NumberToGenerate: 15
-  GenerationDistance: 25
-  SpaceNeeded: 10
+  GenerationDistance: 35
+  SpaceNeeded: 8
   Player: {fileID: 0}
