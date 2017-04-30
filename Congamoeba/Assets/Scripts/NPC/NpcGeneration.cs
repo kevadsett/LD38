@@ -125,4 +125,9 @@ public class NpcGeneration : MonoBehaviour {
 		Object.Destroy(npc.gameObject);
 		_npcs.Remove(npc);
 	}
+
+	public static void Ignore(NpcStateMachine npc)
+	{
+		_npcs.Remove (npc);
+	}
 }
