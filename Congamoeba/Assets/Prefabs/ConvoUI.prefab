@@ -197,7 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114000011374916104
@@ -212,7 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114000011485545930
@@ -335,7 +337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 7
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114000014063641832
@@ -350,7 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114075923628147196
@@ -365,7 +369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114106991155628968
@@ -434,7 +439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 5
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114358310753084208
@@ -476,7 +482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 6
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114857759340790436
@@ -491,7 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  spacing: 112
+  spacing: 80
+  padding: 32
   fadeTime: 0.4
   notPlayingFade: 0.6
 --- !u!114 &114953831777368802

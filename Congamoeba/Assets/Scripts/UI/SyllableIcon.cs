@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SyllableIcon : MonoBehaviour {
 	[SerializeField] int id;
 	[SerializeField] float spacing;
+	[SerializeField] float padding;
 	[SerializeField] float fadeTime;
 	[SerializeField] float notPlayingFade;
 
@@ -48,8 +49,8 @@ public class SyllableIcon : MonoBehaviour {
 		timer -= Time.deltaTime / fadeTime;
 
 		if (numToShow > id) {
-			float leftMost = spacing * -0.5f * numInUse;
-			float myPos = leftMost + spacing * id;
+			float leftMost = (padding * -0.5f * (numInUse - 1)) + (spacing * -0.5f * numInUse);
+			float myPos = leftMost + spacing * id + padding * id;
 
 			rect.anchoredPosition = new Vector3 (myPos, 0f);
 
