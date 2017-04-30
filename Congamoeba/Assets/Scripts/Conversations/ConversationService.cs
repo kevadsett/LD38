@@ -63,7 +63,7 @@ namespace Congamoeba.Conversations
 
 		public static ConversationData GetConversation()
 		{
-			Debug.Log ("Get conversation, difficulty: " + _difficulty);
+			//Debug.Log ("Get conversation, difficulty: " + _difficulty);
 			List<ConversationData> conversationList;
 			if (_conversationsByDifficulty.TryGetValue (_difficulty, out conversationList))
 			{
